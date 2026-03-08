@@ -4,11 +4,15 @@ Akıllı ve kişiselleştirilmiş bir asistan deneyimi sunan, modern teknolojile
 
 ---
 
-### � [**Uygulama Tanıtımını ve Ekran Görüntülerini Görüntüle (PDF)**](./app.pdf)
+![Smart Assistant Showcase](./showcase.png)
 
 ---
 
-## �📌 Proje Hakkında
+### 📥 [**Uygulama Tanıtımını ve Ekran Görüntülerini Görüntüle (PDF)**](./app.pdf)
+
+---
+
+## 📌 Proje Hakkında
 
 Smart Assistant, kullanıcıların günlük görevlerini yönetmelerine, not almalarına ve en önemlisi gelişmiş Yapay Zeka (AI) modelleri ile (Gemini veya OpenAI) sohbet ederek yardım almasına olanak tanıyan bir asistan ekosistemidir.
 
@@ -65,4 +69,3 @@ Frontend dizinine gidin ve Flutter uygulamasını başlatın (MacOS/Xcode gerekl
 Bu proje eğitim ve kişisel gelişim amaçlı geliştirilmiştir.
 
 ---
-*Geliştiren: [Your Name/Github]*
