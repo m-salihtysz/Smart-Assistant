@@ -102,7 +102,7 @@ class UserProfile {
 extension StringLocalization on String {
   String tr(BuildContext context) {
     if (this == 'Ad (Örn. Apple, BIST 100)' || this == 'Örn. Market') return this;
-    final appState = context.watch<AppState>();
+    final appState = context.read<AppState>();
     final lang = appState.locale.languageCode;
     if (lang == 'en') {
       return _enTranslations[this] ?? this;
@@ -112,6 +112,38 @@ extension StringLocalization on String {
 }
 
 const Map<String, String> _enTranslations = {
+  'Giriş yap veya yeni hesap oluştur': 'Sign in or create a new account',
+  'Hesabın yok mu? Kayıt ol': 'Don\'t have an account? Sign up',
+  'Hoş geldin.': 'Welcome.',
+  'Lütfen e-posta gir': 'Please enter email',
+  'Geçerli bir e-posta gir': 'Please enter a valid email',
+  'Lütfen şifre gir': 'Please enter password',
+  'Şifre en az 4 karakter olmalı': 'Password must be at least 4 characters',
+  'Hoş geldin,': 'Welcome,',
+  'Kullanıcı': 'User',
+  'Aktiviteler': 'Activities',
+  'Tüm Kategoriler': 'All Categories',
+  'Doğum tarihinizi seçin': 'Select your birth date',
+  'Bildirimleri Etkinleştir': 'Enable Notifications',
+  'Çıkış Yap': 'Log Out',
+  'Pzt': 'Mon', 'Sal': 'Tue', 'Çar': 'Wed', 'Per': 'Thu', 'Cum': 'Fri', 'Cmt': 'Sat', 'Paz': 'Sun',
+  'Seçilmedi': 'Not selected', 'Göğüs': 'Chest', 'Sırt': 'Back', 'Omuz': 'Shoulder', 'Kol': 'Arm', 'Bacak': 'Leg', 'Kardiyo': 'Cardio', 'Tüm vücut': 'Full body', 'Dinlenme': 'Rest',
+  'Notu düzenle': 'Edit note',
+  'Not başlığı': 'Note title',
+  'Notunu yaz...': 'Write your note...',
+  'Hoş geldin': 'Welcome',
+  'Hoş Geldin!': 'Welcome!',
+  'Smart Assistant Premium dünyasına hoş geldin.': 'Welcome to Smart Assistant Premium world.',
+  'Yeni hesap oluştur': 'Create new account',
+  'Kayıt başarısız:': 'Registration failed:',
+  'E-posta girin': 'Enter email',
+  'Geçerli bir e-posta girin': 'Enter a valid email',
+  'Şifre girin': 'Enter password',
+  'Notlarım': 'My Notes',
+  'Yeni Rutin Ekle': 'Add New Routine',
+  'Borsa Takip Listesi': 'Watchlist',
+  'Gelir/Gider': 'Income/Expense',
+  'İşlem Geçmişi': 'Transaction History',
   'Smart Assistant': 'Smart Assistant',
   'Giriş yap': 'Sign in',
   'Kayıt ol': 'Sign up',
@@ -176,6 +208,110 @@ const Map<String, String> _enTranslations = {
   'Rutin ekle': 'Add routine',
   'Rutin adı': 'Routine name',
   'Günün Notu': 'Note of the day',
+  'Hesap bilgilerini buradan yönetebilirsin.': 'Manage your account information here.',
+  'E-posta Adresi': 'Email Address',
+  'Ad Soyad': 'Full Name',
+  'Adınızı girin': 'Enter your name',
+  'Doğum Tarihi': 'Date of Birth',
+  'Dil Seçeneği': 'Language Option',
+  'Bildirimler': 'Notifications',
+  'Değişiklikleri Kaydet': 'Save Changes',
+  'Hızlı Bakış': 'Quick Glance',
+  'Günlük Hedef': 'Daily Goal',
+  'Finansal Durum': 'Financial Status',
+  'Tamamlandı': 'Completed',
+  'Harcandı': 'Spent',
+  'Asistanı kullanmak için önce giriş yapmalısın. Profil sekmesinden giriş yapmayı dene.': 'You must log in first to use the assistant. Try logging in from the Profile tab.',
+  'Asistan şu an beklenmedik bir cevap döndürdü.': 'The assistant returned an unexpected response.',
+  'Asistan şu an yanıt veremiyor (hata kodu: ': 'The assistant cannot respond right now (error code: ',
+  'Bir süre sonra tekrar dene.': 'Try again after a while.',
+  'Asistan ile bağlantı kurarken bir hata oluştu: ': 'An error occurred while connecting to the assistant: ',
+  'Harika Gidiyorsun!': 'You are doing great!',
+  'Bugünkü hedeflerinin %': 'Your goals for today are %',
+  'ini tamamladın. Devam et!': ' completed. Keep going!',
+  'Tümünü Gör': 'See All',
+  'Kategoriler': 'Categories',
+  'Hoş Geldin': 'Welcome',
+  'Zaten hesabın var mı? Giriş yap': 'Already have an account? Sign in',
+  'Sana daha iyi yardımcı olabilmem için birkaç bilgi isteyeceğim.': 'I will ask for some information to help you better.',
+  'Yeni': 'New',
+  'Bilgilerin güncellendi': 'Information updated',
+  'Tarih': 'Date',
+  'Borsam': 'My Stocks',
+  'Gelir-Gider': 'Income-Expense',
+  'Henüz bir işlem yok.': 'No transactions yet.',
+  'Yeni İşlem Ekle': 'Add New Transaction',
+  'Takip Listem': 'My Watchlist',
+  'Takip listen boş.': 'Watchlist is empty.',
+  'Hisse / Endeks Ekle': 'Add Stock / Index',
+  'Bugünün Rutinleri': 'Today\'s Routines',
+  'Rutinleri': 'Routines',
+  'Bu gün için rutin bulunmuyor.': 'No routines for today.',
+  'Set x': 'Set x',
+  'Tekrar': 'Reps',
+  'Yeni Hareket Ekle': 'Add New Exercise',
+  'Henüz seçilmedi': 'Not selected yet',
+  'Düzenle': 'Edit',
+  'Günün Hedefi': 'Today\'s Goal',
+  'Bugün için hareket eklenmemiş.': 'No exercises added for today.',
+  'Merhaba': 'Hello',
+  'Antrenman programların, hedeflerin ve ilerlemeni burada takip edeceksin.': 'Track your workout programs, goals and progress here.',
+  'Gelir-giderlerin, bütçe planların ve hedeflerin için alan.': 'Area for your income-expenses, budget plans and goals.',
+  'Günlük alışkanlıklarını ve yapılacaklarını burada organize edeceksin.': 'Organize your daily habits and to-dos here.',
+  'Önemli notlar ve fikirler için hızlı alan.': 'Quick space for important notes and ideas.',
+  // Finance Categories
+  'Kategori': 'Category',
+  'Market': 'Market',
+  'Yemek': 'Food',
+  'Ulaşım': 'Transport',
+  'Eğlence': 'Entertainment',
+  'Sağlık': 'Health',
+  'Eğitim': 'Education',
+  'Fatura': 'Bill',
+  'Maaş': 'Salary',
+  'Diğer': 'Other',
+  'Günlük Gider': 'Daily Expense',
+  'Aylık Gider': 'Monthly Expense',
+  // Exercise Names
+  'Bench Press': 'Bench Press',
+  'Incline Dumbbell Press': 'Incline Dumbbell Press',
+  'Chest Fly (Kablo veya Dumbbell)': 'Chest Fly (Cable or Dumbbell)',
+  'Push-up (Şınav)': 'Push-up',
+  'Dips': 'Dips',
+  'Lat Pulldown': 'Lat Pulldown',
+  'Seated Cable Row': 'Seated Cable Row',
+  'Bent Over Row': 'Bent Over Row',
+  'Deadlift': 'Deadlift',
+  'Pull-up (Barfiks)': 'Pull-up',
+  'Overhead Press': 'Overhead Press',
+  'Lateral Raise (Yan Açış)': 'Lateral Raise',
+  'Front Raise (Ön Açış)': 'Front Raise',
+  'Face Pull': 'Face Pull',
+  'Shrug': 'Shrug',
+  'Biceps: Barbell Curl': 'Biceps: Barbell Curl',
+  'Biceps: Hammer Curl': 'Biceps: Hammer Curl',
+  'Triceps: Triceps Pushdown': 'Triceps: Triceps Pushdown',
+  'Triceps: Skull Crusher': 'Triceps: Skull Crusher',
+  'Ön Kol: Reverse Curl': 'Forearm: Reverse Curl',
+  'Squat': 'Squat',
+  'Leg Press': 'Leg Press',
+  'Leg Extension': 'Leg Extension',
+  'Leg Curl': 'Leg Curl',
+  'Calf Raise': 'Calf Raise',
+  'Koşu Bandı': 'Treadmill',
+  'Bisiklet': 'Bicycle',
+  'Eliptik Bisiklet': 'Elliptical',
+  'Kürek Çekme': 'Rowing',
+  'İp Atlama': 'Jump Rope',
+  'Goblet Squat': 'Goblet Squat',
+  'Push-up': 'Push-up',
+  'Dumbbell Row': 'Dumbbell Row',
+  'Shoulder Press': 'Shoulder Press',
+  'Plank': 'Plank',
+  'Hafif Esneme Hareketleri': 'Light Stretching',
+  'Kısa Mesafe Yürüyüş': 'Short Walk',
+  'Mobilite Egzersizleri': 'Mobility Exercises',
+  'Vücut Bakımı ve Uyku': 'Body Care and Sleep',
 };
 
 class AppState extends ChangeNotifier {
@@ -195,6 +331,12 @@ class AppState extends ChangeNotifier {
 
   void setLocale(Locale newLocale) {
     locale = newLocale;
+    notifyListeners();
+  }
+
+  bool notificationsEnabled = true;
+  void setNotificationsEnabled(bool value) {
+    notificationsEnabled = value;
     notifyListeners();
   }
 
@@ -346,121 +488,44 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Smart Assistant',
             debugShowCheckedModeBanner: false,
+            themeMode: ThemeMode.light,
             builder: (context, child) {
-              final isDark = appState.isDarkMode;
-              final String bgImage = isDark ? 'assets/bg_dark.png' : 'assets/bg_light.png';
-              return Stack(
-                fit: StackFit.expand,
-                children: [
-                  Image.asset(
-                    bgImage,
-                    fit: BoxFit.cover,
-                  ),
-                  ?child,
-                ],
+              return Container(
+                color: const Color(0xFFF8F9FA),
+                child: DefaultTextStyle(
+                  style: const TextStyle(color: Color(0xFF1A1A1A)),
+                  child: child!,
+                ),
               );
             },
             theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(
-                seedColor: const Color(0xFF2E7D6E),
-                brightness: Brightness.light,
-              ).copyWith(
-                surface: Colors.white.withOpacity(0.1),
-                surfaceContainerHighest: const Color(0xFFF0F2F3).withOpacity(0.3),
-                surfaceContainerHigh: const Color(0xFFF4F5F6).withOpacity(0.3),
-                surfaceContainer: const Color(0xFFF6F7F8).withOpacity(0.3),
-                surfaceContainerLow: const Color(0xFFF8F9FA).withOpacity(0.3),
-                primaryContainer: const Color(0xFFE8F5F2).withOpacity(0.4),
-                onPrimaryContainer: const Color(0xFF1A2E2A),
-              ),
               useMaterial3: true,
               scaffoldBackgroundColor: Colors.transparent,
-              cardTheme: CardThemeData(
-                elevation: 0,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                color: Colors.white.withOpacity(0.5),
-              ),
-              canvasColor: Colors.white,
-              dialogTheme: DialogThemeData(
-                backgroundColor: Colors.white,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-              ),
-              elevatedButtonTheme: ElevatedButtonThemeData(
-                style: ElevatedButton.styleFrom(
-                  elevation: 0,
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                ),
-              ),
-              filledButtonTheme: FilledButtonThemeData(
-                style: FilledButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                ),
-              ),
-              inputDecorationTheme: InputDecorationTheme(
-                filled: true,
-                fillColor: Colors.white.withOpacity(0.4),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: const Color(0xFF2E7D6E).withOpacity(0.2)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(color: Color(0xFF2E7D6E), width: 1.5),
-                ),
-                contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                labelStyle: const TextStyle(color: Colors.black54),
-                hintStyle: const TextStyle(color: Colors.black38),
-              ),
-            ),
-            darkTheme: ThemeData(
               colorScheme: ColorScheme.fromSeed(
-                seedColor: const Color(0xFF4DB6AC),
-                brightness: Brightness.dark,
-              ).copyWith(
-                surface: const Color(0xFF121212).withOpacity(0.2),
-                surfaceContainerHighest: const Color(0xFF1E1E1E).withOpacity(0.3),
-                primaryContainer: const Color(0xFF1E3A35).withOpacity(0.3),
+                seedColor: const Color(0xFF1A1A1A),
+                primary: const Color(0xFF1A1A1A),
+                secondary: const Color(0xFF757575),
+                surface: Colors.white,
               ),
-              useMaterial3: true,
-              scaffoldBackgroundColor: Colors.transparent,
-              cardTheme: CardThemeData(
+              textTheme: const TextTheme(
+                headlineLarge: TextStyle(fontWeight: FontWeight.w900, color: Color(0xFF1A1A1A), letterSpacing: -1),
+                headlineMedium: TextStyle(fontWeight: FontWeight.w800, color: Color(0xFF1A1A1A), letterSpacing: -0.5),
+                titleLarge: TextStyle(fontWeight: FontWeight.w700, color: Color(0xFF1A1A1A)),
+                bodyLarge: TextStyle(color: Color(0xFF424242), fontSize: 16),
+              ),
+              appBarTheme: const AppBarTheme(
+                backgroundColor: Colors.transparent,
                 elevation: 0,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                color: const Color(0xFF1E1E1E).withOpacity(0.6),
+                centerTitle: false,
+                titleTextStyle: TextStyle(color: Color(0xFF1A1A1A), fontSize: 20, fontWeight: FontWeight.w800),
               ),
-              canvasColor: const Color(0xFF1E1E1E),
-              dialogTheme: DialogThemeData(
-                backgroundColor: const Color(0xFF1E1E1E),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-              ),
-              elevatedButtonTheme: ElevatedButtonThemeData(
-                style: ElevatedButton.styleFrom(
-                  elevation: 0,
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                ),
-              ),
-              inputDecorationTheme: InputDecorationTheme(
-                filled: true,
-                fillColor: Colors.black.withOpacity(0.4),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Colors.white.withOpacity(0.1)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(color: Color(0xFF4DB6AC), width: 1.5),
-                ),
-                contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                labelStyle: const TextStyle(color: Colors.white70),
-                hintStyle: const TextStyle(color: Colors.white38),
+              cardTheme: CardThemeData(
+                elevation: 4,
+                shadowColor: Colors.black.withOpacity(0.1),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                color: Colors.white,
               ),
             ),
-            themeMode: appState.isDarkMode ? ThemeMode.dark : ThemeMode.light,
             locale: appState.locale,
             supportedLocales: const [
               Locale('tr'),
@@ -559,7 +624,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       'Smart Assistant',
                       style: theme.textTheme.headlineMedium?.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: const Color(0xFF1A1A1A),
                         letterSpacing: 1.2,
                       ),
                     ),
@@ -567,7 +632,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Text(
                       'Giriş yap veya yeni hesap oluştur'.tr(context),
                       style: theme.textTheme.bodyMedium?.copyWith(
-                        color: Colors.white70,
+                        color: Colors.black54,
                       ),
                     ),
                     const SizedBox(height: 40),
@@ -596,7 +661,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Text(
-                              'Giriş yap',
+                              'Giriş yap'.tr(context),
                               style: theme.textTheme.titleLarge?.copyWith(
                                 fontWeight: FontWeight.w600,
                               ),
@@ -609,20 +674,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                 labelText: 'E-posta'.tr(context),
                                 filled: true,
                                 border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(28),
                                 ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(28),
                                   borderSide: BorderSide(
                                       color: colorScheme.outlineVariant),
                                 ),
                               ),
                               validator: (v) {
                                 if (v == null || v.trim().isEmpty) {
-                                  return 'E-posta girin';
+                                  return 'E-posta girin'.tr(context);
                                 }
                                 if (!v.contains('@')) {
-                                  return 'Geçerli bir e-posta girin';
+                                  return 'Geçerli bir e-posta girin'.tr(context);
                                 }
                                 return null;
                               },
@@ -635,20 +700,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                 labelText: 'Şifre'.tr(context),
                                 filled: true,
                                 border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(28),
                                 ),
                                 enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(28),
                                   borderSide: BorderSide(
                                       color: colorScheme.outlineVariant),
                                 ),
                               ),
                               validator: (v) {
                                 if (v == null || v.trim().isEmpty) {
-                                  return 'Şifre girin';
+                                  return 'Şifre girin'.tr(context);
                                 }
                                 if (v.trim().length < 4) {
-                                  return 'Şifre en az 4 karakter olmalı';
+                                  return 'Şifre en az 4 karakter olmalı'.tr(context);
                                 }
                                 return null;
                               },
@@ -689,10 +754,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       );
                     },
                     child: Text(
-                      'Hesabın yok mu? Kayıt ol',
+                      'Hesabın yok mu? Kayıt ol'.tr(context),
                       style: theme.textTheme.bodyMedium?.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
+                        color: const Color(0xFF1A1A1A),
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -737,7 +802,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final ok = await appState.login(email, password);
     if (!ok) {
       setState(() {
-        _errorText = 'E-posta veya şifre hatalı.';
+        _errorText = 'E-posta veya şifre hatalı.'.tr(context);
       });
       return;
     }
@@ -800,16 +865,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     filled: true,
                     fillColor: Colors.grey.shade50,
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(28),
                       borderSide: BorderSide(color: Colors.grey.shade300),
                     ),
                   ),
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return 'Lütfen e-posta gir';
+                      return 'Lütfen e-posta gir'.tr(context);
                     }
                     if (!value.contains('@')) {
-                      return 'Geçerli bir e-posta gir';
+                      return 'Geçerli bir e-posta gir'.tr(context);
                     }
                     return null;
                   },
@@ -823,16 +888,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     filled: true,
                     fillColor: Colors.grey.shade50,
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(28),
                       borderSide: BorderSide(color: Colors.grey.shade300),
                     ),
                   ),
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return 'Lütfen şifre gir';
+                      return 'Lütfen şifre gir'.tr(context);
                     }
                     if (value.trim().length < 4) {
-                      return 'Şifre en az 4 karakter olmalı';
+                      return 'Şifre en az 4 karakter olmalı'.tr(context);
                     }
                     return null;
                   },
@@ -962,7 +1027,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Text(
-                            'Kayıt ol',
+                            'Kayıt ol'.tr(context),
                             style: theme.textTheme.titleLarge?.copyWith(
                               fontWeight: FontWeight.w600,
                             ),
@@ -975,16 +1040,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               labelText: 'E-posta'.tr(context),
                               filled: true,
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(28),
                               ),
                               enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(28),
                                 borderSide: BorderSide(color: colorScheme.outlineVariant),
                               ),
                             ),
                             validator: (v) {
-                              if (v == null || v.trim().isEmpty) return 'E-posta girin';
-                              if (!v.contains('@')) return 'Geçerli bir e-posta girin';
+                              if (v == null || v.trim().isEmpty) return 'E-posta girin'.tr(context);
+                              if (!v.contains('@')) return 'Geçerli bir e-posta girin'.tr(context);
                               return null;
                             },
                           ),
@@ -996,16 +1061,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               labelText: 'Şifre'.tr(context),
                               filled: true,
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(28),
                               ),
                               enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(28),
                                 borderSide: BorderSide(color: colorScheme.outlineVariant),
                               ),
                             ),
                             validator: (v) {
-                              if (v == null || v.trim().isEmpty) return 'Şifre belirleyin';
-                              if (v.trim().length < 4) return 'Şifre en az 4 karakter olmalı';
+                              if (v == null || v.trim().isEmpty) return 'Şifre belirleyin'.tr(context);
+                              if (v.trim().length < 4) return 'Şifre en az 4 karakter olmalı'.tr(context);
                               return null;
                             },
                           ),
@@ -1029,7 +1094,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(),
                   child: Text(
-                    'Zaten hesabın var mı? Giriş yap',
+                    'Zaten hesabın var mı? Giriş yap'.tr(context),
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
@@ -1144,7 +1209,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Merhaba, $emailText',
+                        'Merhaba'.tr(context) + ', $emailText',
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: Colors.black87,
                           fontWeight: FontWeight.w600,
@@ -1152,7 +1217,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                 const SizedBox(height: 8),
                 Text(
-                  'Sana daha iyi yardımcı olabilmem için birkaç bilgi isteyeceğim.',
+                  'Sana daha iyi yardımcı olabilmem için birkaç bilgi isteyeceğim.'.tr(context),
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 const SizedBox(height: 24),
@@ -1164,7 +1229,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return 'Lütfen adını gir';
+                      return 'Lütfen adını gir'.tr(context);
                     }
                     return null;
                   },
@@ -1179,7 +1244,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     child: Text(
                       _selectedDate == null
-                          ? 'Seç'
+                          ? 'Seç'.tr(context)
                           : '${_selectedDate!.day.toString().padLeft(2, '0')}.'
                               '${_selectedDate!.month.toString().padLeft(2, '0')}.'
                               '${_selectedDate!.year}',
@@ -1226,31 +1291,41 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: _buildBody(),
-      bottomNavigationBar: SafeArea(
+            bottomNavigationBar: SafeArea(
         top: false,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+          padding: const EdgeInsets.fromLTRB(32, 0, 32, 12),
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+            height: 64,
             decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.7),
-              borderRadius: BorderRadius.circular(28),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(32),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.06),
+                  blurRadius: 15,
+                  offset: const Offset(0, 8),
+                ),
+              ],
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _BottomNavItem(
-                  icon: Icons.chat_bubble_outline,
+                  icon: Icons.chat_bubble_outline_rounded,
+                  activeIcon: Icons.chat_bubble_rounded,
                   isSelected: _selectedIndex == 0,
                   onTap: () => setState(() => _selectedIndex = 0),
                 ),
                 _BottomNavItem(
-                  icon: Icons.home_rounded,
+                  icon: Icons.home_outlined,
+                  activeIcon: Icons.home_rounded,
                   isSelected: _selectedIndex == 1,
                   onTap: () => setState(() => _selectedIndex = 1),
                 ),
                 _BottomNavItem(
-                  icon: Icons.settings_rounded,
+                  icon: Icons.settings_outlined,
+                  activeIcon: Icons.settings_rounded,
                   isSelected: _selectedIndex == 2,
                   onTap: () => setState(() => _selectedIndex = 2),
                 ),
@@ -1279,31 +1354,32 @@ class _HomeScreenState extends State<HomeScreen> {
 class _BottomNavItem extends StatelessWidget {
   const _BottomNavItem({
     required this.icon,
+    required this.activeIcon,
     required this.isSelected,
     required this.onTap,
   });
 
   final IconData icon;
+  final IconData activeIcon;
   final bool isSelected;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    final color = isSelected ? const Color(0xFF4DB6AC) : Colors.white70;
-
     return GestureDetector(
       onTap: onTap,
+      behavior: HitTestBehavior.opaque,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        duration: const Duration(milliseconds: 300),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF4DB6AC).withValues(alpha: 0.25) : Colors.transparent,
+          color: isSelected ? const Color(0xFF1A1A1A).withOpacity(0.05) : Colors.transparent,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Icon(
-          icon,
-          color: color,
-          size: 22,
+          isSelected ? activeIcon : icon,
+          color: isSelected ? const Color(0xFF1A1A1A) : Colors.black26,
+          size: 26,
         ),
       ),
     );
@@ -1321,162 +1397,338 @@ class _HomeDashboard extends StatefulWidget {
 class _HomeDashboardState extends State<_HomeDashboard> {
   int? _selectedCategory;
 
-  // Sıra: sol üst Aktivite, sağ üst Rutin, sol alt Spor, sağ alt Finans, en alt Notlar
   static const List<_HomeCategory> _categories = [
-    _HomeCategory(label: 'Aktiviteler', icon: Icons.today_rounded),
-    _HomeCategory(label: 'Rutinler', icon: Icons.repeat_rounded),
-    _HomeCategory(label: 'Spor', icon: Icons.fitness_center),
-    _HomeCategory(label: 'Finans', icon: Icons.account_balance_wallet_rounded),
-    _HomeCategory(label: 'Notlar', icon: Icons.note_rounded),
+    _HomeCategory(label: 'Aktiviteler', icon: Icons.explore_rounded, imageUrl: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80'),
+    _HomeCategory(label: 'Rutinler', icon: Icons.calendar_month_rounded, imageUrl: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80'),
+    _HomeCategory(label: 'Spor', icon: Icons.fitness_center_rounded, imageUrl: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80'),
+    _HomeCategory(label: 'Finans', icon: Icons.account_balance_wallet_rounded, imageUrl: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80'),
+    _HomeCategory(label: 'Notlar', icon: Icons.edit_note_rounded, imageUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80'),
   ];
 
   Widget _contentFor(int index) {
     switch (index) {
-      case 0:
-        return const ActivitiesTab();
-      case 1:
-        return const RoutinesTab();
-      case 2:
-        return const SportTab();
-      case 3:
-        return const FinanceTab();
-      case 4:
-        return const NotesTab();
-      default:
-        return const SizedBox.shrink();
+      case 0: return const ActivitiesTab();
+      case 1: return const RoutinesTab();
+      case 2: return const SportTab();
+      case 3: return const FinanceTab();
+      case 4: return const NotesTab();
+      default: return const SizedBox.shrink();
     }
+  }
+
+  Widget _buildHeader(String name) {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(24, 40, 24, 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Hoş geldin,'.tr(context),
+            style: TextStyle(color: Colors.grey.shade800, fontSize: 16, fontWeight: FontWeight.w700),
+          ),
+          Text(
+            name,
+            style: const TextStyle(color: Color(0xFF1A1A1A), fontSize: 28, fontWeight: FontWeight.w900, letterSpacing: -0.5),
+          ),
+        ],
+      ),
+    );
+  }
+
+  double _completionRate = 0.0;
+  double _todaySpending = 0.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadQuickGlanceData();
+  }
+
+  Future<void> _loadQuickGlanceData() async {
+    final prefs = await SharedPreferences.getInstance();
+    final now = DateTime.now();
+    
+    final routinesJson = prefs.getString('routines');
+    if (routinesJson != null) {
+      try {
+        final Map<String, dynamic> data = jsonDecode(routinesJson);
+        final weekday = now.weekday - 1;
+        final routines = (data['$weekday'] as List? ?? []);
+        final completions = (data['completions'] as Map? ?? {});
+        final dateKey = '${now.year}-${now.month}-${now.day}';
+        final dayCompletions = (completions[dateKey] as List? ?? []);
+        
+        if (routines.isNotEmpty) {
+          int completedCount = 0;
+          for (int i = 0; i < routines.length; i++) {
+            if (i < dayCompletions.length && dayCompletions[i] == true) {
+              completedCount++;
+            }
+          }
+          _completionRate = (completedCount / routines.length) * 100;
+        }
+      } catch (_) {}
+    }
+
+    final financeJson = prefs.getString('finance_transactions');
+    if (financeJson != null) {
+      try {
+        final List data = jsonDecode(financeJson);
+        final dateKey = '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+        double total = 0;
+        for (var tx in data) {
+          if (tx['date'] == dateKey && tx['type'] == 'expense') {
+            total += (tx['amount'] as num).toDouble();
+          }
+        }
+        _todaySpending = total;
+      } catch (_) {}
+    }
+    if (mounted) setState(() {});
+  }
+
+  void _showAllCategories() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (context) => Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+        ),
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(width: 40, height: 4, decoration: BoxDecoration(color: Colors.grey.shade300, borderRadius: BorderRadius.circular(2))),
+            const SizedBox(height: 24),
+            Text('Tüm Kategoriler'.tr(context), style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: Color(0xFF1A1A1A))),
+            const SizedBox(height: 24),
+            ...List.generate(_categories.length, (index) {
+              final cat = _categories[index];
+              return ListTile(
+                leading: Icon(cat.icon, color: const Color(0xFF1A1A1A)),
+                title: Text(cat.label.tr(context), style: const TextStyle(fontWeight: FontWeight.w700)),
+                trailing: const Icon(Icons.arrow_forward_ios_rounded, size: 14),
+                onTap: () {
+                  Navigator.pop(context);
+                  setState(() => _selectedCategory = index);
+                },
+              );
+            }),
+            const SizedBox(height: 24),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final userName = context.watch<AppState>().currentUser?.name ?? 'Kullanıcı'.tr(context);
 
     if (_selectedCategory != null) {
       return Column(
         children: [
-          Material(
+          AppBar(
+            backgroundColor: Colors.white,
             elevation: 0,
-            color: Colors.black.withValues(alpha: 0.3),
-            child: SafeArea(
-              bottom: false,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 12),
-                decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha: 0.3),
-                  borderRadius: const BorderRadius.vertical(bottom: Radius.circular(20)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
-                      blurRadius: 12,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20, color: Colors.white),
-                      onPressed: () => setState(() => _selectedCategory = null),
-                    ),
-                    Text(
-                      _categories[_selectedCategory!].label,
-                      style: theme.textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20, color: Color(0xFF1A1A1A)),
+              onPressed: () => setState(() => _selectedCategory = null),
             ),
+            title: Text(_categories[_selectedCategory!].label.tr(context), style: const TextStyle(color: Color(0xFF1A1A1A), fontWeight: FontWeight.w800)),
           ),
           Expanded(child: _contentFor(_selectedCategory!)),
         ],
       );
     }
 
-    final userName = context.watch<AppState>().currentUser?.name ?? '';
-
-    return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-      child: Column(
-        children: [
-          const SizedBox(height: 40),
-          Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (userName.isNotEmpty)
-                  Text(
-                    'Hoşgeldin, $userName',
-                    style: theme.textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
+    return RefreshIndicator(
+      onRefresh: _loadQuickGlanceData,
+      color: const Color(0xFF1A1A1A),
+      child: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 10),
+            _buildHeader(userName),
+            
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Kategoriler'.tr(context), style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900)),
+                  GestureDetector(
+                    onTap: _showAllCategories,
+                    child: Text('Tümünü Gör'.tr(context), style: TextStyle(color: Colors.blue.shade700, fontWeight: FontWeight.w700, fontSize: 14)),
                   ),
-                if (userName.isNotEmpty) const SizedBox(height: 6),
-                Text(
-                  'Neye bakalım?',
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    color: Colors.white70,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 32),
-          LayoutBuilder(
-            builder: (context, constraints) {
-              const crossAxisCount = 2;
-              const spacing = 12.0;
-              final width = (constraints.maxWidth - spacing * (crossAxisCount - 1)) / crossAxisCount;
-              return Wrap(
-                spacing: spacing,
-                runSpacing: spacing,
-                alignment: WrapAlignment.center,
-                children: List.generate(_categories.length, (index) {
+  
+            SizedBox(
+              height: 320,
+              child: ListView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                scrollDirection: Axis.horizontal,
+                itemCount: _categories.length,
+                itemBuilder: (context, index) {
                   final cat = _categories[index];
-                    return SizedBox(
-                    width: width,
-                    child: Material(
-                      elevation: 0,
-                      color: Colors.black.withValues(alpha: 0.35),
-                      borderRadius: BorderRadius.circular(20),
-                      shadowColor: Colors.black.withValues(alpha: 0.2),
-                      child: InkWell(
-                        onTap: () => setState(() => _selectedCategory = index),
-                        borderRadius: BorderRadius.circular(20),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 14),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                cat.icon,
-                                size: 32,
-                                color: const Color(0xFF4DB6AC),
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                cat.label,
-                                style: theme.textTheme.titleSmall?.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
+                  return GestureDetector(
+                    onTap: () => setState(() => _selectedCategory = index),
+                    child: Container(
+                      width: 220,
+                      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(28),
+                        image: DecorationImage(
+                          image: NetworkImage(cat.imageUrl!),
+                          fit: BoxFit.cover,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.1),
+                            blurRadius: 15,
+                            offset: const Offset(0, 8),
+                          ),
+                        ],
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(28),
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                            colors: [
+                              Colors.black.withOpacity(0.8),
+                              Colors.transparent,
                             ],
                           ),
+                        ),
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(cat.icon, color: Colors.white, size: 24),
+                            const SizedBox(height: 8),
+                            Text(
+                              cat.label.tr(context),
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: -0.5,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   );
-                }),
-              );
-            },
+                },
+              ),
+            ),
+  
+            Padding(
+              padding: const EdgeInsets.fromLTRB(24, 20, 24, 10),
+              child: Text('Hızlı Bakış'.tr(context), style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w900)),
+            ),
+  
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                children: [
+                  _buildSuggestionItem(
+                    'Hoş Geldin!'.tr(context),
+                    'Smart Assistant Premium dünyasına hoş geldin.'.tr(context),
+                    Icons.auto_awesome_rounded,
+                  ),
+                  const SizedBox(height: 12),
+                  _buildVerticalInfoCard('Günlük Hedef'.tr(context), '${_completionRate.toStringAsFixed(0)}% ' + 'Tamamlandı'.tr(context), Icons.auto_graph_rounded, Colors.orange.shade50),
+                  const SizedBox(height: 12),
+                  _buildVerticalInfoCard('Finansal Durum'.tr(context), '₺${_todaySpending.toStringAsFixed(0)} ' + 'Harcandı'.tr(context), Icons.wallet_rounded, Colors.blue.shade50),
+                  const SizedBox(height: 12),
+                  if (_completionRate > 0 && _completionRate < 100)
+                    _buildSuggestionItem(
+                      'Harika Gidiyorsun!'.tr(context),
+                      'Bugünkü hedeflerinin %'.tr(context) + _completionRate.toStringAsFixed(0) + 'ini tamamladın. Devam et!'.tr(context),
+                      Icons.insights_rounded,
+                    ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 100),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSuggestionItem(String title, String body, IconData icon) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 10)],
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1A1A1A).withOpacity(0.05),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(icon, color: const Color(0xFF1A1A1A), size: 18),
+          ),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15, color: Color(0xFF1A1A1A))),
+                Text(body, style: TextStyle(color: Colors.grey.shade500, fontSize: 12)),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildVerticalInfoCard(String title, String subtitle, IconData icon, Color bg) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(28),
+        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 15)],
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(16)),
+            child: Icon(icon, color: const Color(0xFF1A1A1A), size: 24),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: const TextStyle(color: Colors.black38, fontWeight: FontWeight.w600, fontSize: 13)),
+                const SizedBox(height: 2),
+                Text(subtitle, style: const TextStyle(color: Color(0xFF1A1A1A), fontWeight: FontWeight.w900, fontSize: 18)),
+              ],
+            ),
           ),
         ],
       ),
@@ -1485,9 +1737,10 @@ class _HomeDashboardState extends State<_HomeDashboard> {
 }
 
 class _HomeCategory {
-  const _HomeCategory({required this.label, required this.icon});
+  const _HomeCategory({required this.label, required this.icon, this.imageUrl});
   final String label;
   final IconData icon;
+  final String? imageUrl;
 }
 
 /// Eski ortadaki ana sayfa (referans)
@@ -1500,31 +1753,31 @@ class DashboardTab extends StatelessWidget {
       padding: const EdgeInsets.all(24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           _SimplePlaceholder(
-            title: 'Spor',
+            title: 'Spor'.tr(context),
             description:
-                'Antrenman programların, hedeflerin ve ilerlemeni burada takip edeceksin.',
+                'Antrenman programların, hedeflerin ve ilerlemeni burada takip edeceksin.'.tr(context),
             icon: Icons.fitness_center,
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           _SimplePlaceholder(
-            title: 'Finans',
+            title: 'Finans'.tr(context),
             description:
-                'Gelir-giderlerin, bütçe planların ve hedeflerin için alan.',
+                'Gelir-giderlerin, bütçe planların ve hedeflerin için alan.'.tr(context),
             icon: Icons.account_balance_wallet,
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           _SimplePlaceholder(
-            title: 'Rutinler',
+            title: 'Rutinler'.tr(context),
             description:
-                'Günlük alışkanlıklarını ve yapılacaklarını burada organize edeceksin.',
+                'Günlük alışkanlıklarını ve yapılacaklarını burada organize edeceksin.'.tr(context),
             icon: Icons.repeat,
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           _SimplePlaceholder(
-            title: 'Notlar',
-            description: 'Önemli notlar ve fikirler için hızlı alan.',
+            title: 'Notlar'.tr(context),
+            description: 'Önemli notlar ve fikirler için hızlı alan.'.tr(context),
             icon: Icons.note,
           ),
         ],
@@ -1562,6 +1815,17 @@ class _SportTabState extends State<SportTab> {
     'Tüm vücut',
     'Dinlenme',
   ];
+  
+  static const Map<String, List<String>> _regionExercises = {
+    'Göğüs': ['Bench Press', 'Incline Dumbbell Press', 'Chest Fly (Kablo veya Dumbbell)', 'Push-up (Şınav)', 'Dips'],
+    'Sırt': ['Lat Pulldown', 'Seated Cable Row', 'Bent Over Row', 'Deadlift', 'Pull-up (Barfiks)'],
+    'Omuz': ['Overhead Press', 'Lateral Raise (Yan Açış)', 'Front Raise (Ön Açış)', 'Face Pull', 'Shrug'],
+    'Kol': ['Biceps: Barbell Curl', 'Biceps: Hammer Curl', 'Triceps: Triceps Pushdown', 'Triceps: Skull Crusher', 'Ön Kol: Reverse Curl'],
+    'Bacak': ['Squat', 'Leg Press', 'Leg Extension', 'Leg Curl', 'Calf Raise'],
+    'Kardiyo': ['Koşu Bandı', 'Bisiklet', 'Eliptik Bisiklet', 'Kürek Çekme', 'İp Atlama'],
+    'Tüm vücut': ['Goblet Squat', 'Push-up', 'Dumbbell Row', 'Shoulder Press', 'Plank'],
+    'Dinlenme': ['Hafif Esneme Hareketleri', 'Kısa Mesafe Yürüyüş', 'Mobilite Egzersizleri', 'Vücut Bakımı ve Uyku'],
+  };
 
   int _selectedDayIndex = DateTime.now().weekday - 1; // 0-6
 
@@ -1593,6 +1857,7 @@ class _SportTabState extends State<SportTab> {
             name: m['name'] as String? ?? '',
             reps: m['reps'] as int? ?? 12,
             sets: m['sets'] as int? ?? 3,
+            region: m['region'] as String? ?? 'Seçilmedi',
           ));
         }
         _plans[dayIndex] = _WorkoutPlan(region: region, exercises: exercises);
@@ -1607,7 +1872,7 @@ class _SportTabState extends State<SportTab> {
       data['$dayIndex'] = {
         'region': plan.region,
         'exercises': plan.exercises
-            .map((e) => {'name': e.name, 'reps': e.reps, 'sets': e.sets})
+            .map((e) => {'name': e.name, 'reps': e.reps, 'sets': e.sets, 'region': e.region})
             .toList(),
       };
     });
@@ -1631,65 +1896,13 @@ class _SportTabState extends State<SportTab> {
     return List.generate(7, (i) => monday.add(Duration(days: i)));
   }
 
-  Future<void> _changeRegion() async {
-    final current = _planForDay(_selectedDayIndex);
-    String tempRegion = current.region;
-
-    await showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text('Bölge seç'.tr(context)),
-          content: StatefulBuilder(
-            builder: (context, setStateDialog) {
-              return DropdownButton<String>(
-                isExpanded: true,
-                value: tempRegion,
-                items: _regions
-                    .map(
-                      (r) => DropdownMenuItem(
-                        value: r,
-                        child: Text(r),
-                      ),
-                    )
-                    .toList(),
-                onChanged: (value) {
-                  if (value == null) return;
-                  setStateDialog(() {
-                    tempRegion = value;
-                  });
-                },
-              );
-            },
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text('Vazgeç'.tr(context)),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('Kaydet'.tr(context)),
-            ),
-          ],
-        );
-      },
-    );
-
-    setState(() {
-      final existing = _planForDay(_selectedDayIndex);
-      _plans[_selectedDayIndex] = _WorkoutPlan(
-        region: tempRegion,
-        exercises: existing.exercises,
-      );
-    });
-    await _saveSportPlans();
-  }
+  // Artık günün hedefi otomatik hesaplanacak, _changeRegion'a gerek kalmayabilir 
+  // ama yine de genel bir not/hedef olarak tutabiliriz.
 
   Future<void> _addExercise() async {
-    final nameController = TextEditingController();
+    String tempRegion = _regions[1]; // Varsayılan Göğüs
+    final availableExercises = () => _regionExercises[tempRegion] ?? [];
+    String selectedName = availableExercises().isNotEmpty ? availableExercises().first : '';
     final repsController = TextEditingController(text: '12');
     final setsController = TextEditingController(text: '3');
 
@@ -1698,35 +1911,62 @@ class _SportTabState extends State<SportTab> {
       builder: (context) {
         return AlertDialog(
           title: Text('Hareket ekle'.tr(context)),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                controller: nameController,
-                decoration: InputDecoration(
-                  labelText: 'Hareket adı'.tr(context),
-                  hintText: 'Örn. Bench press, Squat...'.tr(context),
-                ),
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: repsController,
-                decoration: InputDecoration(
-                  labelText: 'Tekrar sayısı'.tr(context),
-                  hintText: 'Örn. 12'.tr(context),
-                ),
-                keyboardType: TextInputType.number,
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: setsController,
-                decoration: InputDecoration(
-                  labelText: 'Set sayısı'.tr(context),
-                  hintText: 'Örn. 3'.tr(context),
-                ),
-                keyboardType: TextInputType.number,
-              ),
-            ],
+          content: StatefulBuilder(
+            builder: (context, setStateDialog) {
+              final currentExercises = availableExercises();
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  DropdownButton<String>(
+                    isExpanded: true,
+                    value: tempRegion,
+                    items: _regions.map((r) => DropdownMenuItem(value: r, child: Text(r.tr(context)))).toList(),
+                    onChanged: (v) {
+                      if (v == null) return;
+                      setStateDialog(() {
+                        tempRegion = v;
+                        final newExercises = _regionExercises[tempRegion] ?? [];
+                        selectedName = newExercises.isNotEmpty ? newExercises.first : '';
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 12),
+                  if (currentExercises.isNotEmpty)
+                    DropdownButton<String>(
+                      isExpanded: true,
+                      value: currentExercises.contains(selectedName) ? selectedName : currentExercises.first,
+                      items: currentExercises.map((e) => DropdownMenuItem(value: e, child: Text(e.tr(context)))).toList(),
+                      onChanged: (v) => setStateDialog(() => selectedName = v ?? ''),
+                    )
+                  else
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Hareket adı'.tr(context),
+                        hintText: 'Örn. Bench press, Squat...'.tr(context),
+                      ),
+                      onChanged: (v) => selectedName = v,
+                    ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: repsController,
+                    decoration: InputDecoration(
+                      labelText: 'Tekrar sayısı'.tr(context),
+                      hintText: 'Örn. 12'.tr(context),
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: setsController,
+                    decoration: InputDecoration(
+                      labelText: 'Set sayısı'.tr(context),
+                      hintText: 'Örn. 3'.tr(context),
+                    ),
+                    keyboardType: TextInputType.number,
+                  ),
+                ],
+              );
+            },
           ),
           actions: [
             TextButton(
@@ -1735,7 +1975,7 @@ class _SportTabState extends State<SportTab> {
             ),
             ElevatedButton(
               onPressed: () {
-                if (nameController.text.trim().isEmpty) return;
+                if (selectedName.trim().isEmpty) return;
                 final reps = int.tryParse(repsController.text.trim());
                 if (reps == null || reps < 1) return;
                 final sets = int.tryParse(setsController.text.trim());
@@ -1757,9 +1997,9 @@ class _SportTabState extends State<SportTab> {
     setState(() {
       final current = _planForDay(_selectedDayIndex);
       final updated = List<_WorkoutExercise>.from(current.exercises)
-        ..add(_WorkoutExercise(name: nameController.text.trim(), reps: reps, sets: sets));
+        ..add(_WorkoutExercise(name: selectedName.trim(), reps: reps, sets: sets, region: tempRegion));
       _plans[_selectedDayIndex] = _WorkoutPlan(
-        region: current.region,
+        region: current.region, // Eski alanı uyumluluk için tutuyoruz
         exercises: updated,
       );
     });
@@ -1771,7 +2011,9 @@ class _SportTabState extends State<SportTab> {
     if (index < 0 || index >= current.exercises.length) return;
 
     final ex = current.exercises[index];
-    final nameController = TextEditingController(text: ex.name);
+    String tempRegion = ex.region;
+    final availableExercises = () => _regionExercises[tempRegion] ?? [];
+    String selectedName = ex.name;
     final repsController = TextEditingController(text: '${ex.reps}');
     final setsController = TextEditingController(text: '${ex.sets}');
 
@@ -1780,33 +2022,60 @@ class _SportTabState extends State<SportTab> {
       builder: (context) {
         return AlertDialog(
           title: Text('Hareketi düzenle'.tr(context)),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                controller: nameController,
-                decoration: InputDecoration(labelText: 'Hareket adı'.tr(context)),
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: repsController,
-                decoration: InputDecoration(labelText: 'Tekrar sayısı'.tr(context)),
-                keyboardType: TextInputType.number,
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: setsController,
-                decoration: InputDecoration(labelText: 'Set sayısı'.tr(context)),
-                keyboardType: TextInputType.number,
-              ),
-            ],
+          content: StatefulBuilder(
+            builder: (context, setStateDialog) {
+              final currentExercises = availableExercises();
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  DropdownButton<String>(
+                    isExpanded: true,
+                    value: tempRegion,
+                    items: _regions.map((r) => DropdownMenuItem(value: r, child: Text(r.tr(context)))).toList(),
+                    onChanged: (v) {
+                      if (v == null) return;
+                      setStateDialog(() {
+                        tempRegion = v;
+                        final newExercises = _regionExercises[tempRegion] ?? [];
+                        selectedName = newExercises.isNotEmpty ? newExercises.first : '';
+                      });
+                    },
+                  ),
+                  const SizedBox(height: 12),
+                  if (currentExercises.isNotEmpty)
+                    DropdownButton<String>(
+                      isExpanded: true,
+                      value: currentExercises.contains(selectedName) ? selectedName : currentExercises.first,
+                      items: currentExercises.map((e) => DropdownMenuItem(value: e, child: Text(e.tr(context)))).toList(),
+                      onChanged: (v) => setStateDialog(() => selectedName = v ?? ''),
+                    )
+                  else
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Hareket adı'.tr(context)),
+                      onChanged: (v) => selectedName = v,
+                    ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: repsController,
+                    decoration: InputDecoration(labelText: 'Tekrar sayısı'.tr(context)),
+                    keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: setsController,
+                    decoration: InputDecoration(labelText: 'Set sayısı'.tr(context)),
+                    keyboardType: TextInputType.number,
+                  ),
+                ],
+              );
+            },
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop('delete'),
-              child: const Text(
-                'Sil',
-                style: TextStyle(color: Colors.red),
+              child: Text(
+                'Sil'.tr(context),
+                style: const TextStyle(color: Colors.red),
               ),
             ),
             TextButton(
@@ -1815,7 +2084,7 @@ class _SportTabState extends State<SportTab> {
             ),
             ElevatedButton(
               onPressed: () {
-                if (nameController.text.trim().isEmpty) return;
+                if (selectedName.trim().isEmpty) return;
                 final reps = int.tryParse(repsController.text.trim());
                 if (reps == null || reps < 1) return;
                 final sets = int.tryParse(setsController.text.trim());
@@ -1843,7 +2112,7 @@ class _SportTabState extends State<SportTab> {
       final sets = int.tryParse(setsController.text.trim()) ?? ex.sets;
       setState(() {
         final updated = List<_WorkoutExercise>.from(current.exercises);
-        updated[index] = _WorkoutExercise(name: nameController.text.trim(), reps: reps, sets: sets);
+        updated[index] = _WorkoutExercise(name: selectedName.trim(), reps: reps, sets: sets, region: tempRegion);
         _plans[_selectedDayIndex] = _WorkoutPlan(
           region: current.region,
           exercises: updated,
@@ -1856,145 +2125,182 @@ class _SportTabState extends State<SportTab> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final plan = _planForDay(_selectedDayIndex);
+    final weekDays = _weekDays();
 
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            'Haftalık spor planın',
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // Modern Week Selector Capsule
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.vertical(bottom: Radius.circular(32)),
+            boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10)],
+          ),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: List.generate(7, (i) {
+                final d = weekDays[i];
+                final selected = i == _selectedDayIndex;
+                return GestureDetector(
+                  onTap: () => setState(() => _selectedDayIndex = i),
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    width: 50,
+                    margin: const EdgeInsets.symmetric(horizontal: 6),
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    decoration: BoxDecoration(
+                      color: selected ? const Color(0xFF1A1A1A) : Colors.transparent,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          _dayLabels[i].tr(context),
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: selected ? Colors.white70 : Colors.black38,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          '${d.day}',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: selected ? Colors.white : Colors.black87,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }),
             ),
           ),
-          const SizedBox(height: 12),
-          LayoutBuilder(
-            builder: (context, constraints) {
-              final weekDays = _weekDays();
-              final cellWidth = constraints.maxWidth / 7;
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: Row(
-                  children: List.generate(7, (index) {
-                    final d = weekDays[index];
-                    final isSelected = index == _selectedDayIndex;
-                    return SizedBox(
-                      width: cellWidth,
-                      child: GestureDetector(
-                        onTap: () => setState(() => _selectedDayIndex = index),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
+        ),
+
+        Padding(
+          padding: const EdgeInsets.fromLTRB(24, 24, 24, 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Günün Hedefi'.tr(context), style: TextStyle(color: Colors.grey.shade600, fontWeight: FontWeight.w600, fontSize: 13)),
+                  Text(
+                    plan.exercises.isEmpty 
+                      ? 'Henüz seçilmedi'.tr(context) 
+                      : plan.exercises.map((e) => e.region).toSet().join(' + ').tr(context),
+                    style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 22, color: Color(0xFF1A1A1A)),
+                  ),
+                ],
+              ),
+              /* _changeRegion butonu kaldırıldı çünkü artık her hareketin kendi bölgesi var */
+            ],
+          ),
+        ),
+
+        Expanded(
+          child: plan.exercises.isEmpty
+              ? Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.fitness_center_rounded, size: 64, color: Colors.grey.shade300),
+                      const SizedBox(height: 16),
+                      Text('Bugün için hareket eklenmemiş.'.tr(context), style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.w500)),
+                    ],
+                  ),
+                )
+              : ListView.builder(
+                  padding: const EdgeInsets.all(24),
+                  itemCount: plan.exercises.length,
+                  itemBuilder: (context, index) {
+                    final ex = plan.exercises[index];
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 16),
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12)],
+                      ),
+                      child: InkWell(
+                        onTap: () => _editExercise(index),
+                        borderRadius: BorderRadius.circular(24),
+                        child: Row(
                           children: [
-                            Text(
-                              _dayLabels[index],
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                fontSize: 12,
-                                color: isSelected ? Colors.white : Colors.white70,
-                                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-                              ),
-                            ),
-                            const SizedBox(height: 6),
                             Container(
-                              width: 32,
-                              height: 32,
-                              alignment: Alignment.center,
+                              padding: const EdgeInsets.all(12),
                               decoration: BoxDecoration(
-                                color: isSelected ? colorScheme.primary : Colors.transparent,
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: isSelected ? colorScheme.primary : Colors.white38,
-                                  width: 1,
-                                ),
+                                color: const Color(0xFF1A1A1A).withOpacity(0.05),
+                                borderRadius: BorderRadius.circular(16),
                               ),
-                              child: Text(
-                                '${d.day}',
-                                style: theme.textTheme.bodySmall?.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                  color: isSelected ? Colors.white : Colors.white,
-                                ),
+                              child: const Icon(Icons.bolt_rounded, color: Color(0xFF1A1A1A), size: 22),
+                            ),
+                            const SizedBox(width: 16),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text(
+                                        ex.name,
+                                        style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 17, color: Color(0xFF1A1A1A)),
+                                      ),
+                                      const SizedBox(width: 8),
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                        decoration: BoxDecoration(
+                                          color: Colors.blue.withOpacity(0.1),
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: Text(
+                                          ex.region.tr(context),
+                                          style: TextStyle(color: Colors.blue.shade700, fontSize: 10, fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    '${ex.sets} Set x ${ex.reps} Tekrar'.tr(context),
+                                    style: TextStyle(color: Colors.black45, fontWeight: FontWeight.w500, fontSize: 13),
+                                  ),
+                                ],
                               ),
                             ),
+                            const Icon(Icons.arrow_forward_ios_rounded, size: 14, color: Colors.black26),
                           ],
                         ),
                       ),
                     );
-                  }),
+                  },
                 ),
-              );
-            },
-          ),
-          const SizedBox(height: 16),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Bu günün bölgesi',
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: _changeRegion,
-                        child: Text('Planını düzenle'.tr(context)),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    plan.region == _regions[0] ? 'Henüz seçilmedi' : plan.region,
-                    style: theme.textTheme.bodyLarge,
-                  ),
-                ],
-              ),
+        ),
+        
+        Padding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+          child: ElevatedButton.icon(
+            onPressed: _addExercise,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF1A1A1A),
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 60),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             ),
+            icon: const Icon(Icons.add_rounded),
+            label: Text('Yeni Hareket Ekle'.tr(context), style: const TextStyle(fontWeight: FontWeight.bold)),
           ),
-          const SizedBox(height: 16),
-          Expanded(
-            child: plan.exercises.isEmpty
-                ? Center(
-                    child: Text(
-                      'Bu gün için eklenmiş hareket yok.',
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: Colors.white70,
-                      ),
-                    ),
-                  )
-                : ListView.builder(
-                    itemCount: plan.exercises.length,
-                    itemBuilder: (context, index) {
-                      final ex = plan.exercises[index];
-                      return Card(
-                        margin: const EdgeInsets.symmetric(vertical: 4),
-                        child: ListTile(
-                          title: Text(ex.name),
-                          subtitle: Text('${ex.sets} set x ${ex.reps} tekrar'.tr(context)),
-                          onTap: () => _editExercise(index),
-                        ),
-                      );
-                    },
-                  ),
-          ),
-          const SizedBox(height: 8),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton.icon(
-              onPressed: _addExercise,
-              icon: const Icon(Icons.add),
-              label: Text('Hareket ekle'.tr(context)),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -2010,11 +2316,12 @@ class _WorkoutPlan {
 }
 
 class _WorkoutExercise {
-  _WorkoutExercise({required this.name, required this.reps, required this.sets});
+  _WorkoutExercise({required this.name, required this.reps, required this.sets, required this.region});
 
   final String name;
   final int reps;
   final int sets;
+  final String region;
 }
 
 class FinanceTab extends StatefulWidget {
@@ -2056,6 +2363,7 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
             amount: (m['amount'] as num?)?.toDouble() ?? 0,
             title: m['title'] as String? ?? '',
             dateKey: m['date'] as String? ?? '',
+            category: m['category'] as String? ?? 'Diğer',
           ));
         }
       } catch (_) {}
@@ -2084,6 +2392,7 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
       'amount': t.amount,
       'title': t.title,
       'date': t.dateKey,
+      'category': t.category,
     }).toList()));
     await prefs.setString('finance_watchlist', jsonEncode(_watchlist.map((w) => {
       'name': w.name,
@@ -2097,8 +2406,38 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
       _transactions.where((t) => t.type == 'gider').fold(0, (s, t) => s + t.amount);
   double get _balance => _totalGelir - _totalGider;
 
+  double get _dailyGider {
+    final now = DateTime.now();
+    final todayKey = '${now.year.toString().padLeft(4, '0')}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+    return _transactions.where((t) => t.type == 'gider' && t.dateKey == todayKey).fold(0, (s, t) => s + t.amount);
+  }
+
+  double get _monthlyGider {
+    final now = DateTime.now();
+    final monthPrefix = '${now.year.toString().padLeft(4, '0')}-${now.month.toString().padLeft(2, '0')}';
+    return _transactions.where((t) => t.type == 'gider' && t.dateKey.startsWith(monthPrefix)).fold(0, (s, t) => s + t.amount);
+  }
+
+  static const List<String> _expenseCategories = ['Market', 'Yemek', 'Ulaşım', 'Eğlence', 'Sağlık', 'Eğitim', 'Fatura', 'Diğer'];
+  static const List<String> _incomeCategories = ['Maaş', 'Yeni', 'Diğer'];
+
+  IconData _getCategoryIcon(String category) {
+    switch (category) {
+      case 'Market': return Icons.shopping_cart_rounded;
+      case 'Yemek': return Icons.restaurant_rounded;
+      case 'Ulaşım': return Icons.directions_car_rounded;
+      case 'Eğlence': return Icons.sports_esports_rounded;
+      case 'Sağlık': return Icons.medical_services_rounded;
+      case 'Eğitim': return Icons.school_rounded;
+      case 'Fatura': return Icons.receipt_rounded;
+      case 'Maaş': return Icons.payments_rounded;
+      default: return Icons.category_rounded;
+    }
+  }
+
   Future<void> _addTransaction() async {
     String type = 'gider';
+    String category = 'Market';
     final amountController = TextEditingController();
     final titleController = TextEditingController();
     final date = DateTime.now();
@@ -2109,6 +2448,9 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
       builder: (context) {
         return StatefulBuilder(
           builder: (context, setStateDialog) {
+            final categories = type == 'gelir' ? _incomeCategories : _expenseCategories;
+            if (!categories.contains(category)) category = categories.first;
+
             return AlertDialog(
               title: Text('Gelir / Gider ekle'.tr(context)),
               content: SingleChildScrollView(
@@ -2121,12 +2463,24 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
                         ButtonSegment(value: 'gider', label: Text('Gider'.tr(context)), icon: const Icon(Icons.arrow_upward, size: 18)),
                       ],
                       selected: {type},
-                      onSelectionChanged: (s) => setStateDialog(() => type = s.first),
+                      onSelectionChanged: (s) {
+                        setStateDialog(() {
+                          type = s.first;
+                          category = (type == 'gelir' ? _incomeCategories : _expenseCategories).first;
+                        });
+                      },
                     ),
                     const SizedBox(height: 16),
+                    DropdownButtonFormField<String>(
+                      value: category,
+                      decoration: InputDecoration(labelText: 'Kategori'.tr(context)),
+                      items: categories.map((c) => DropdownMenuItem(value: c, child: Text(c.tr(context)))).toList(),
+                      onChanged: (v) => setStateDialog(() => category = v ?? category),
+                    ),
+                    const SizedBox(height: 12),
                     TextField(
                       controller: titleController,
-                      decoration: InputDecoration(labelText: 'Açıklama'.tr(context), hintText: 'Örn. Maaş, Market'.tr(context)),
+                      decoration: InputDecoration(labelText: 'Açıklama'.tr(context), hintText: 'Örn. Market alışverişi'.tr(context)),
                     ),
                     const SizedBox(height: 12),
                     TextField(
@@ -2136,7 +2490,7 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
                     ),
                     const SizedBox(height: 12),
                     ListTile(
-                      title: Text('Tarih: $dateKey'.tr(context)),
+                      title: Text('${'Tarih'.tr(context)}: $dateKey'),
                       trailing: TextButton(
                         onPressed: () async {
                           final p = await showDatePicker(
@@ -2178,7 +2532,7 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
 
     final amount = double.tryParse(amountController.text.replaceAll(',', '.')) ?? 0;
     setState(() {
-      _transactions.insert(0, _Transaction(type: type, amount: amount, title: titleController.text.trim(), dateKey: dateKey));
+      _transactions.insert(0, _Transaction(type: type, amount: amount, title: titleController.text.trim(), dateKey: dateKey, category: category));
     });
     await _saveFinance();
   }
@@ -2240,27 +2594,29 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
     return Column(
       children: [
-        TabBar(
-          controller: _tabController,
-          labelColor: Colors.white,
-          unselectedLabelColor: Colors.white70,
-          indicatorColor: colorScheme.primary,
-          tabs: const [
-            Tab(text: 'Gelir-Gider'),
-            Tab(text: 'Borsam'),
-          ],
+        Container(
+          color: Colors.white,
+          child: TabBar(
+            controller: _tabController,
+            labelColor: const Color(0xFF1A1A1A),
+            unselectedLabelColor: Colors.black38,
+            indicatorColor: const Color(0xFF1A1A1A),
+            indicatorWeight: 3,
+            labelStyle: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15),
+            tabs: [
+              Tab(text: 'Gelir-Gider'.tr(context)),
+              Tab(text: 'Borsam'.tr(context)),
+            ],
+          ),
         ),
         Expanded(
           child: TabBarView(
             controller: _tabController,
             children: [
-              _buildGelirGider(theme, colorScheme),
-              _buildBorsam(theme, colorScheme),
+              _buildGelirGider(),
+              _buildBorsam(),
             ],
           ),
         ),
@@ -2268,86 +2624,158 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
     );
   }
 
-  Widget _buildGelirGider(ThemeData theme, ColorScheme colorScheme) {
+  Widget _buildGelirGider() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Padding(
-          padding: const EdgeInsets.all(16),
-          child: Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
+        // Summary Header
+        Container(
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.vertical(bottom: Radius.circular(32)),
+            boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10)],
+          ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      _summaryChip('Gelir', _totalGelir, Colors.green, colorScheme),
-                      _summaryChip('Gider', _totalGider, Colors.red, colorScheme),
-                      _summaryChip('Bakiye', _balance, _balance >= 0 ? Colors.green : Colors.red, colorScheme),
-                    ],
-                  ),
+                  Expanded(child: _buildFinanceStat('Bakiye'.tr(context), _balance, _balance >= 0 ? Colors.blue.shade600 : Colors.red.shade600, Icons.account_balance_wallet_rounded)),
+                  Expanded(child: _buildFinanceStat('Günlük Gider'.tr(context), _dailyGider, Colors.orange.shade700, Icons.today_rounded)),
+                  Expanded(child: _buildFinanceStat('Aylık Gider'.tr(context), _monthlyGider, Colors.purple.shade600, Icons.calendar_month_rounded)),
                 ],
               ),
-            ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text('${'Gelir'.tr(context)}: +₺${_totalGelir.toStringAsFixed(0)}', style: TextStyle(color: Colors.green.shade700, fontWeight: FontWeight.bold, fontSize: 13)),
+                  Text('${'Gider'.tr(context)}: -₺${_totalGider.toStringAsFixed(0)}', style: TextStyle(color: Colors.red.shade700, fontWeight: FontWeight.bold, fontSize: 13)),
+                ],
+              ),
+            ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: SizedBox(
-            width: double.infinity,
-            child: FilledButton.icon(
-              onPressed: _addTransaction,
-              icon: const Icon(Icons.add),
-              label: Text('Gelir / Gider ekle'.tr(context)),
-            ),
-          ),
-        ),
-        const SizedBox(height: 8),
+
         Expanded(
           child: _transactions.isEmpty
               ? Center(
-                  child: Text(
-                    'Henüz kayıt yok. Gelir veya gider ekleyebilirsin.',
-                    style: theme.textTheme.bodyMedium?.copyWith(color: Colors.white70),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.receipt_long_rounded, size: 64, color: Colors.grey.shade300),
+                      const SizedBox(height: 16),
+                      Text('Henüz bir işlem yok.'.tr(context), style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.w500)),
+                    ],
                   ),
                 )
               : ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.all(24),
                   itemCount: _transactions.length,
                   itemBuilder: (context, index) {
                     final t = _transactions[index];
                     final isGelir = t.type == 'gelir';
-                    return Card(
-                      margin: const EdgeInsets.symmetric(vertical: 4),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: (isGelir ? Colors.green : Colors.red).withOpacity(0.2),
-                          child: Icon(isGelir ? Icons.arrow_downward : Icons.arrow_upward,
-                              color: isGelir ? Colors.green : Colors.red, size: 20),
-                        ),
-                        title: Text(t.title),
-                        subtitle: Text(t.dateKey),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              '${isGelir ? '+' : '-'} ${t.amount.toStringAsFixed(2)} ₺',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                color: isGelir ? Colors.green : Colors.red,
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 16),
+                      padding: const EdgeInsets.all(18),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12)],
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: (isGelir ? Colors.green : Colors.red).withOpacity(0.08),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Icon(
+                              _getCategoryIcon(t.category),
+                              color: isGelir ? Colors.green.shade700 : Colors.red.shade700,
+                              size: 20,
+                            ),
+                          ),
+                          const SizedBox(width: 16),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  t.title,
+                                  style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16, color: Color(0xFF1A1A1A)),
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      t.category.tr(context),
+                                      style: TextStyle(color: Colors.grey.shade500, fontSize: 12, fontWeight: FontWeight.w500),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      '• ${t.dateKey}',
+                                      style: TextStyle(color: Colors.grey.shade400, fontSize: 11),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                '${isGelir ? '+' : '-'}₺${t.amount.toStringAsFixed(0)}',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 17,
+                                  color: isGelir ? Colors.green.shade700 : Colors.red.shade700,
+                                ),
                               ),
-                            ),
-                            IconButton(
-                              icon: const Icon(Icons.delete_outline, size: 20),
-                              onPressed: () => _deleteTransaction(index),
-                            ),
-                          ],
-                        ),
+                              IconButton(
+                                icon: const Icon(Icons.delete_outline_rounded, size: 18, color: Colors.grey),
+                                padding: EdgeInsets.zero,
+                                constraints: const BoxConstraints(),
+                                onPressed: () => _deleteTransaction(index),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     );
                   },
                 ),
+        ),
+        
+        Padding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+          child: ElevatedButton.icon(
+            onPressed: _addTransaction,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF1A1A1A),
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 60),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            ),
+            icon: const Icon(Icons.add_card_rounded),
+            label: Text('Yeni İşlem Ekle'.tr(context), style: const TextStyle(fontWeight: FontWeight.bold)),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildFinanceStat(String label, double amount, Color color, IconData icon) {
+    return Column(
+      children: [
+        Icon(icon, color: color, size: 20),
+        const SizedBox(height: 6),
+        Text(label, style: TextStyle(color: Colors.grey.shade500, fontSize: 12, fontWeight: FontWeight.w600)),
+        Text(
+          '₺${amount.toStringAsFixed(0)}',
+          style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 16, color: Color(0xFF1A1A1A)),
         ),
       ],
     );
@@ -2367,62 +2795,94 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
     );
   }
 
-  Widget _buildBorsam(ThemeData theme, ColorScheme colorScheme) {
+  Widget _buildBorsam() {
+    final theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.fromLTRB(24, 24, 24, 8),
           child: Text(
-            'Takip listem',
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
-            ),
+            'Takip Listem'.tr(context),
+            style: theme.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800, color: const Color(0xFF1A1A1A)),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: SizedBox(
-            width: double.infinity,
-            child: OutlinedButton.icon(
-              onPressed: _addWatchlist,
-              icon: const Icon(Icons.add_chart),
-              label: Text('Hisse / endeks ekle'.tr(context)),
-            ),
-          ),
-        ),
-        const SizedBox(height: 8),
         Expanded(
           child: _watchlist.isEmpty
               ? Center(
-                  child: Text(
-                    'Borsa takip listen boş. Hisse veya endeks ekleyebilirsin.',
-                    style: theme.textTheme.bodyMedium?.copyWith(color: Colors.white70),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.stacked_line_chart_rounded, size: 64, color: Colors.grey.shade300),
+                      const SizedBox(height: 16),
+                      Text('Takip listen boş.'.tr(context), style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.w500)),
+                    ],
                   ),
                 )
               : ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.all(24),
                   itemCount: _watchlist.length,
                   itemBuilder: (context, index) {
                     final w = _watchlist[index];
-                    return Card(
-                      margin: const EdgeInsets.symmetric(vertical: 4),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: colorScheme.primaryContainer,
-                          child: Icon(Icons.show_chart, color: colorScheme.onPrimaryContainer, size: 20),
-                        ),
-                        title: Text(w.name),
-                        subtitle: w.symbol.isNotEmpty ? Text(w.symbol) : null,
-                        trailing: IconButton(
-                          icon: const Icon(Icons.close, size: 20),
-                          onPressed: () => _removeWatchlist(index),
-                        ),
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 16),
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12)],
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF1A1A1A).withOpacity(0.05),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: const Icon(Icons.show_chart_rounded, color: Color(0xFF1A1A1A), size: 22),
+                          ),
+                          const SizedBox(width: 16),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  w.name,
+                                  style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 17, color: Color(0xFF1A1A1A)),
+                                ),
+                                if (w.symbol.isNotEmpty)
+                                  Text(
+                                    w.symbol,
+                                    style: TextStyle(color: Colors.blue.shade700, fontWeight: FontWeight.bold, fontSize: 13),
+                                  ),
+                              ],
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.close_rounded, color: Colors.black26),
+                            onPressed: () => _removeWatchlist(index),
+                          ),
+                        ],
                       ),
                     );
                   },
                 ),
+        ),
+        
+        Padding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+          child: ElevatedButton.icon(
+            onPressed: _addWatchlist,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF1A1A1A),
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 60),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            ),
+            icon: const Icon(Icons.add_chart_rounded),
+            label: Text('Hisse / Endeks Ekle'.tr(context), style: const TextStyle(fontWeight: FontWeight.bold)),
+          ),
         ),
       ],
     );
@@ -2430,11 +2890,13 @@ class _FinanceTabState extends State<FinanceTab> with SingleTickerProviderStateM
 }
 
 class _Transaction {
-  _Transaction({required this.type, required this.amount, required this.title, required this.dateKey});
+  _Transaction({required this.type, required this.amount, required this.title, required this.dateKey, required this.category});
+
   final String type;
   final double amount;
   final String title;
   final String dateKey;
+  final String category;
 }
 
 class _WatchlistItem {
@@ -2680,7 +3142,7 @@ class _RoutinesTabState extends State<RoutinesTab> {
                 ),
               ),
               actions: [
-                TextButton(onPressed: () => Navigator.of(context).pop('delete'), child: Text('Sil'.tr(context), style: TextStyle(color: Colors.red))),
+                TextButton(onPressed: () => Navigator.of(context).pop('delete'), child: Text('Sil'.tr(context), style: const TextStyle(color: Colors.red))),
                 TextButton(onPressed: () => Navigator.of(context).pop('cancel'), child: Text('Vazgeç'.tr(context))),
                 ElevatedButton(
                   onPressed: () {
@@ -2728,136 +3190,156 @@ class _RoutinesTabState extends State<RoutinesTab> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final weekDays = _weekDays();
     final dayIndex = _selectedDate.weekday - 1;
     final routines = _routinesFor(dayIndex);
     final completions = _completionsFor(_selectedDate);
     final isToday = _isSameDay(_selectedDate, DateTime.now());
 
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            isToday ? 'Bugün' : '${_selectedDate.day}.${_selectedDate.month}.${_selectedDate.year}',
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // Premium Week Selector
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.vertical(bottom: Radius.circular(32)),
+            boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10)],
+          ),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: List.generate(7, (i) {
+                final d = weekDays[i];
+                final selected = _isSameDay(d, _selectedDate);
+                return GestureDetector(
+                  onTap: () => setState(() => _selectedDate = d),
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    width: 50,
+                    margin: const EdgeInsets.symmetric(horizontal: 6),
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    decoration: BoxDecoration(
+                      color: selected ? const Color(0xFF1A1A1A) : Colors.transparent,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          _dayLabels[i].tr(context),
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: selected ? Colors.white70 : Colors.black38,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          '${d.day}',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: selected ? Colors.white : Colors.black87,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }),
             ),
           ),
-          const SizedBox(height: 12),
-          LayoutBuilder(
-            builder: (context, constraints) {
-              final cellWidth = constraints.maxWidth / 7;
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4),
-                child: Row(
-                  children: List.generate(7, (index) {
-                    final d = weekDays[index];
-                    final selected = _isSameDay(d, _selectedDate);
-                    return SizedBox(
-                      width: cellWidth,
-                      child: GestureDetector(
-                        onTap: () => setState(() => _selectedDate = d),
-                        child: Column(
+        ),
+
+        Padding(
+          padding: const EdgeInsets.fromLTRB(24, 24, 24, 8),
+          child: Text(
+            isToday ? 'Bugünün Rutinleri'.tr(context) : '${_selectedDate.day}.${_selectedDate.month} ${'Rutinleri'.tr(context)}',
+            style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 22, color: Color(0xFF1A1A1A)),
+          ),
+        ),
+
+        Expanded(
+          child: routines.isEmpty
+              ? Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.auto_awesome_rounded, size: 64, color: Colors.grey.shade300),
+                      const SizedBox(height: 16),
+                      Text('Bu gün için rutin bulunmuyor.'.tr(context), style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.w500)),
+                    ],
+                  ),
+                )
+              : ListView.builder(
+                  padding: const EdgeInsets.all(24),
+                  itemCount: routines.length,
+                  itemBuilder: (context, index) {
+                    final r = routines[index];
+                    final done = index < completions.length && completions[index];
+                    final timeStr = '${r.hour.toString().padLeft(2, '0')}:${r.minute.toString().padLeft(2, '0')}';
+                    
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 16),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12)],
+                      ),
+                      child: ListTile(
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        leading: Checkbox(
+                          value: done,
+                          onChanged: (v) => _setCompleted(_selectedDate, index, v ?? false),
+                          activeColor: const Color(0xFF1A1A1A),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                        ),
+                        title: Text(
+                          r.title,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w800,
+                            fontSize: 16,
+                            color: done ? Colors.grey : const Color(0xFF1A1A1A),
+                            decoration: done ? TextDecoration.lineThrough : null,
+                          ),
+                        ),
+                        subtitle: Text(
+                          timeStr,
+                          style: TextStyle(color: Colors.blue.shade700, fontWeight: FontWeight.bold, fontSize: 13),
+                        ),
+                        trailing: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Text(
-                              _dayLabels[index],
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                fontSize: 12,
-                                color: selected ? Colors.white : Colors.white70,
-                                fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
-                              ),
-                            ),
-                            const SizedBox(height: 6),
-                            Container(
-                              width: 32,
-                              height: 32,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: selected ? colorScheme.primary : Colors.transparent,
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: selected ? colorScheme.primary : Colors.white38,
-                                  width: 1,
-                                ),
-                              ),
-                              child: Text(
-                                '${d.day}',
-                                style: theme.textTheme.bodySmall?.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                  color: selected ? Colors.white : Colors.white,
-                                ),
-                              ),
-                            ),
+                            if (r.reminder) const Icon(Icons.notifications_active_rounded, size: 18, color: Colors.amber),
+                            const SizedBox(width: 8),
+                            const Icon(Icons.chevron_right_rounded, color: Colors.black26),
                           ],
                         ),
+                        onTap: () => _editRoutine(index),
                       ),
                     );
-                  }),
+                  },
                 ),
-              );
-            },
-          ),
-          const SizedBox(height: 16),
-          Expanded(
-            child: routines.isEmpty
-                ? Center(
-                    child: Text(
-                      'Bu gün için rutin yok.',
-                      style: theme.textTheme.bodyMedium?.copyWith(color: Colors.white70),
-                    ),
-                  )
-                : ListView.builder(
-                    itemCount: routines.length,
-                    itemBuilder: (context, index) {
-                      final r = routines[index];
-                      final done = index < completions.length && completions[index];
-                      final timeStr = '${r.hour.toString().padLeft(2, '0')}:${r.minute.toString().padLeft(2, '0')}';
-                      return Card(
-                        margin: const EdgeInsets.symmetric(vertical: 4),
-                        child: ListTile(
-                          leading: Checkbox(
-                            value: done,
-                            onChanged: (v) => _setCompleted(_selectedDate, index, v ?? false),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-                          ),
-                          title: Text(
-                            r.title,
-                            style: TextStyle(
-                              decoration: done ? TextDecoration.lineThrough : null,
-                              color: done ? colorScheme.outline : null,
-                            ),
-                          ),
-                          subtitle: Text(timeStr),
-                          trailing: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              if (r.reminder) Icon(Icons.alarm, size: 20, color: colorScheme.primary),
-                              const SizedBox(width: 4),
-                              const Icon(Icons.chevron_right, size: 20),
-                            ],
-                          ),
-                          onTap: () => _editRoutine(index),
-                        ),
-                      );
-                    },
-                  ),
-          ),
-          const SizedBox(height: 8),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton.icon(
-              onPressed: _addRoutine,
-              icon: const Icon(Icons.add),
-              label: Text('Rutin ekle'.tr(context)),
+        ),
+        
+        Padding(
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+          child: ElevatedButton.icon(
+            onPressed: _addRoutine,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF1A1A1A),
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 60),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              elevation: 0,
             ),
+            icon: const Icon(Icons.add_rounded),
+            label: const Text('Yeni Rutin Ekle', style: TextStyle(fontWeight: FontWeight.bold)),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -3073,164 +3555,172 @@ class _ActivitiesTabState extends State<ActivitiesTab> {
   @override
   Widget build(BuildContext context) {
     final activities = _currentActivities;
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final weekDays = _weekDays();
     final isToday = _isSameDay(_selectedDate, DateTime.now());
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20, 16, 20, 8),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              isToday ? 'Bugün' : '${_selectedDate.day}.${_selectedDate.month}.${_selectedDate.year}',
-              style: theme.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
-              ),
+        // Premium Week Selector
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.vertical(bottom: Radius.circular(32)),
+            boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10)],
+          ),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: List.generate(7, (i) {
+                final d = weekDays[i];
+                final selected = _isSameDay(d, _selectedDate);
+                return GestureDetector(
+                  onTap: () => setState(() => _selectedDate = d),
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    width: 50,
+                    margin: const EdgeInsets.symmetric(horizontal: 6),
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    decoration: BoxDecoration(
+                      color: selected ? const Color(0xFF1A1A1A) : Colors.transparent,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          _dayNames[i],
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: selected ? Colors.white70 : Colors.black38,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          '${d.day}',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: selected ? Colors.white : Colors.black87,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }),
             ),
           ),
         ),
+
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+          padding: const EdgeInsets.fromLTRB(24, 24, 24, 8),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: List.generate(7, (i) {
-                      final d = weekDays[i];
-                      final selected = _isSameDay(d, _selectedDate);
-                      final hasActivity = (_activities[_dateKey(d)] ?? []).isNotEmpty;
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                        child: GestureDetector(
-                          onTap: () => setState(() => _selectedDate = d),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                _dayNames[i],
-                                style: theme.textTheme.bodySmall?.copyWith(
-                                  fontSize: 11,
-                                  color: selected ? Colors.white : Colors.white70,
-                                  fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Container(
-                                width: 32,
-                                height: 32,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  color: selected
-                                      ? colorScheme.primary
-                                      : hasActivity
-                                          ? colorScheme.primaryContainer.withOpacity(0.4)
-                                          : Colors.transparent,
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: selected
-                                        ? colorScheme.primary
-                                        : hasActivity
-                                            ? colorScheme.primary.withOpacity(0.8)
-                                            : Colors.white38,
-                                    width: hasActivity && !selected ? 2 : 1,
-                                  ),
-                                ),
-                                child: Text(
-                                  '${d.day}',
-                                  style: theme.textTheme.bodySmall?.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                    color: selected ? Colors.white : Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    }),
-                  ),
-                ),
+              Text(
+                isToday ? 'Günün Aktiviteleri' : '${_selectedDate.day}.${_selectedDate.month} Aktiviteleri',
+                style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 22, color: Color(0xFF1A1A1A)),
               ),
-              const SizedBox(width: 6),
-              Material(
-                color: colorScheme.primaryContainer.withOpacity(0.6),
-                shape: const CircleBorder(),
-                child: InkWell(
-                  onTap: _openCalendar,
-                  customBorder: const CircleBorder(),
-                  child: SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Icon(Icons.calendar_today, size: 20, color: colorScheme.primary),
-                  ),
+              IconButton(
+                onPressed: _openCalendar,
+                icon: const Icon(Icons.calendar_month_rounded, color: Color(0xFF1A1A1A)),
+                style: IconButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  padding: const EdgeInsets.all(12),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                 ),
               ),
             ],
           ),
         ),
+
         Expanded(
           child: activities.isEmpty
               ? Center(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(
-                        Icons.nightlight_round_outlined,
-                        size: 80,
-                        color: Colors.white38,
-                      ),
+                      Icon(Icons.explore_outlined, size: 64, color: Colors.grey.shade300),
                       const SizedBox(height: 16),
-                      Text(
-                        'Bu gün için aktivite yok',
-                        style: theme.textTheme.bodyLarge?.copyWith(
-                          color: Colors.white70,
-                        ),
-                      ),
+                      Text('Bu gün için aktivite bulunmuyor.', style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.w500)),
                     ],
                   ),
                 )
               : ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding: const EdgeInsets.all(24),
                   itemCount: activities.length,
                   itemBuilder: (context, index) {
-                    final activity = activities[index];
-                    final timeText =
-                        '${activity.time.hour.toString().padLeft(2, '0')}:${activity.time.minute.toString().padLeft(2, '0')}';
-                    return Card(
-                      margin: const EdgeInsets.symmetric(vertical: 6),
+                    final act = activities[index];
+                    final timeStr = '${act.time.hour.toString().padLeft(2, '0')}:${act.time.minute.toString().padLeft(2, '0')}';
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 16),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12)],
+                      ),
                       child: ListTile(
-                        leading: Text(timeText, style: const TextStyle(fontWeight: FontWeight.w500)),
-                        title: Text(activity.title),
-                        trailing: activity.reminder
-                            ? Icon(Icons.alarm, size: 22, color: Theme.of(context).colorScheme.primary)
-                            : null,
+                        contentPadding: const EdgeInsets.all(16),
+                        leading: Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF1A1A1A).withOpacity(0.05),
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: const Icon(Icons.rocket_launch_rounded, color: Color(0xFF1A1A1A), size: 22),
+                        ),
+                        title: Text(
+                          act.title,
+                          style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 17, color: Color(0xFF1A1A1A)),
+                        ),
+                        subtitle: Text(
+                          timeStr,
+                          style: TextStyle(color: Colors.blue.shade700, fontWeight: FontWeight.bold),
+                        ),
+                        trailing: IconButton(
+                          icon: const Icon(Icons.close_rounded, size: 18, color: Colors.black26),
+                          onPressed: () => _deleteActivity(index),
+                        ),
                         onTap: () => _editActivity(index),
                       ),
                     );
                   },
                 ),
         ),
+        
         Padding(
-          padding: const EdgeInsets.all(16),
-          child: SizedBox(
-            width: double.infinity,
-            child: ElevatedButton.icon(
-              onPressed: _addActivity,
-              icon: const Icon(Icons.add),
-              label: Text('Aktivite ekle'.tr(context)),
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+          child: ElevatedButton.icon(
+            onPressed: _addActivity,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF1A1A1A),
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 60),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              elevation: 0,
             ),
+            icon: const Icon(Icons.add_rounded),
+            label: const Text('Yeni Aktivite Ekle', style: TextStyle(fontWeight: FontWeight.bold)),
           ),
         ),
       ],
     );
+  }
+
+  Future<void> _deleteActivity(int index) async {
+    final key = _dateKey(_selectedDate);
+    final list = _activities[key] ?? [];
+    if (index < 0 || index >= list.length) return;
+    final item = list[index];
+    if (item.notificationId != null) await cancelReminderNotification(item.notificationId!);
+    setState(() {
+      list.removeAt(index);
+      _activities[key] = list;
+    });
+    await _saveActivities();
   }
 
   Future<void> _editActivity(int index) async {
@@ -3301,12 +3791,7 @@ class _ActivitiesTabState extends State<ActivitiesTab> {
     );
 
     if (result == 'delete') {
-      if (current.notificationId != null) await cancelReminderNotification(current.notificationId!);
-      list.removeAt(index);
-      _activities[key] = list;
-      await _saveActivities();
-      if (!mounted) return;
-      setState(() {});
+      await _deleteActivity(index);
     } else if (result == 'save') {
       if (current.notificationId != null) await cancelReminderNotification(current.notificationId!);
       int? notificationId;
@@ -3315,16 +3800,16 @@ class _ActivitiesTabState extends State<ActivitiesTab> {
         final when = DateTime(_selectedDate.year, _selectedDate.month, _selectedDate.day, pickedTime.hour, pickedTime.minute);
         await scheduleActivityReminder(notificationId, titleController.text.trim(), when);
       }
-      list[index] = _Activity(
-        title: titleController.text.trim(),
-        time: pickedTime,
-        reminder: wantReminder,
-        notificationId: notificationId,
-      );
-      _activities[key] = list;
+      setState(() {
+        list[index] = _Activity(
+          title: titleController.text.trim(),
+          time: pickedTime,
+          reminder: wantReminder,
+          notificationId: notificationId,
+        );
+        _activities[key] = list;
+      });
       await _saveActivities();
-      if (!mounted) return;
-      setState(() {});
     }
   }
 }
@@ -3447,16 +3932,16 @@ class _ActivityCalendarDialogState extends State<_ActivityCalendarDialog> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: selected
-                                  ? colorScheme.primary
+                                  ? const Color(0xFF1A1A1A)
                                   : hasActivity
-                                      ? colorScheme.primaryContainer.withOpacity(0.4)
+                                      ? const Color(0xFF1A1A1A).withOpacity(0.1)
                                       : null,
                               border: Border.all(
                                 color: selected
-                                    ? colorScheme.primary
+                                    ? const Color(0xFF1A1A1A)
                                     : hasActivity
-                                        ? colorScheme.primary.withOpacity(0.8)
-                                        : colorScheme.outline.withOpacity(0.3),
+                                        ? const Color(0xFF1A1A1A).withOpacity(0.8)
+                                        : Colors.grey.shade300,
                                 width: hasActivity && !selected ? 2 : 1,
                               ),
                             ),
@@ -3465,7 +3950,7 @@ class _ActivityCalendarDialogState extends State<_ActivityCalendarDialog> {
                               '$day',
                               style: theme.textTheme.bodySmall?.copyWith(
                                 fontWeight: FontWeight.w600,
-                                color: selected ? colorScheme.onPrimary : colorScheme.onSurface,
+                                color: selected ? Colors.white : const Color(0xFF1A1A1A),
                               ),
                             ),
                           ),
@@ -3541,14 +4026,6 @@ class _NotesTabState extends State<NotesTab> {
         }
       } catch (_) {}
     }
-    if (_notes.isEmpty) {
-      final oldList = prefs.getStringList('notes');
-      if (oldList != null) {
-        for (final s in oldList) {
-          _notes.add(_NoteItem(title: '', body: s));
-        }
-      }
-    }
     setState(() {});
   }
 
@@ -3618,42 +4095,104 @@ class _NotesTabState extends State<NotesTab> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(24, 24, 24, 16),
+          child: Text(
+            'Notlarım'.tr(context),
+            style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 28, color: Color(0xFF1A1A1A), letterSpacing: -1),
+          ),
+        ),
         Expanded(
           child: _notes.isEmpty
               ? Center(
-                  child: Text(
-                    'Henüz not yok.',
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.white70),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.note_alt_rounded, size: 64, color: Colors.grey.shade300),
+                      const SizedBox(height: 16),
+                      Text('Henüz bir notun yok.', style: TextStyle(color: Colors.grey.shade400, fontWeight: FontWeight.w500)),
+                    ],
                   ),
                 )
               : ListView.builder(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   itemCount: _notes.length,
                   itemBuilder: (context, index) {
                     final note = _notes[index];
-                    final displayTitle = note.title.isEmpty ? (note.body.isEmpty ? 'Başlıksız not' : note.body) : note.title;
-                    final displaySubtitle = note.title.isEmpty ? null : (note.body.isEmpty ? null : note.body);
-                    return Card(
-                      margin: const EdgeInsets.symmetric(vertical: 6),
-                      child: ListTile(
-                        title: Text(displayTitle, maxLines: 1, overflow: TextOverflow.ellipsis),
-                        subtitle: displaySubtitle != null ? Text(displaySubtitle, maxLines: 2, overflow: TextOverflow.ellipsis) : null,
-                        onTap: () => _editNote(index),
+                    final displayTitle = note.title.isEmpty ? (note.body.isEmpty ? 'Başlıksız' : note.body) : note.title;
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 16),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12)],
+                      ),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: () => _editNote(index),
+                          borderRadius: BorderRadius.circular(24),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(12),
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFF1A1A1A).withOpacity(0.05),
+                                    borderRadius: BorderRadius.circular(16),
+                                  ),
+                                  child: const Icon(Icons.description_rounded, color: Color(0xFF1A1A1A), size: 22),
+                                ),
+                                const SizedBox(width: 16),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        displayTitle,
+                                        style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 17, color: Color(0xFF1A1A1A)),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      if (note.body.isNotEmpty && note.title.isNotEmpty)
+                                        Padding(
+                                          padding: const EdgeInsets.only(top: 4),
+                                          child: Text(
+                                            note.body,
+                                            style: TextStyle(color: Colors.grey.shade500, fontSize: 13),
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                                const Icon(Icons.arrow_forward_ios_rounded, size: 14, color: Colors.black26),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     );
                   },
                 ),
         ),
         Padding(
-          padding: const EdgeInsets.all(16),
-          child: SizedBox(
-            width: double.infinity,
-            child: ElevatedButton.icon(
-              onPressed: _addNote,
-              icon: const Icon(Icons.add),
-              label: Text('Yeni not ekle'.tr(context)),
+          padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
+          child: ElevatedButton.icon(
+            onPressed: _addNote,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF1A1A1A),
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 60),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              elevation: 0,
             ),
+            icon: const Icon(Icons.add_rounded),
+            label: const Text('Yeni Not Oluştur', style: TextStyle(fontWeight: FontWeight.bold)),
           ),
         ),
       ],
@@ -3772,9 +4311,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       lastDate: now,
     );
     if (picked != null) {
-      setState(() {
-        _birthDate = picked;
-      });
+      setState(() => _birthDate = picked);
     }
   }
 
@@ -3798,138 +4335,180 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<AppState>().currentUser;
+    final appState = context.watch<AppState>();
+    final user = appState.currentUser;
     final email = user?.email ?? '';
 
-    return SafeArea(
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
-        child: Form(
+    return Scaffold(
+      backgroundColor: const Color(0xFFF8F9FA),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(24),
+          child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Ayarlar',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                  'Ayarlar'.tr(context),
+                  style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 28, color: Color(0xFF1A1A1A), letterSpacing: -0.5),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Hesap bilgilerini burada düzenleyebilirsin.',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).textTheme.bodyMedium?.color?.withValues(alpha: 0.7),
-                  ),
+                  'Hesap bilgilerini buradan yönetebilirsin.'.tr(context),
+                  style: TextStyle(color: Colors.grey.shade600, fontSize: 14, fontWeight: FontWeight.w500),
                 ),
-                const SizedBox(height: 24),
-                TextFormField(
-                  initialValue: email,
-                  readOnly: true,
-                  style: TextStyle(color: Theme.of(context).textTheme.bodyMedium?.color),
-                  decoration: InputDecoration(
-                    labelText: 'E-posta'.tr(context),
+                const SizedBox(height: 32),
+                
+                _buildFieldLabel('E-posta Adresi'.tr(context)),
+                _buildReadOnlyField(email),
+                const SizedBox(height: 20),
+                
+                _buildFieldLabel('Ad Soyad'.tr(context)),
+                _buildTextField(_nameController, 'Adınızı girin'.tr(context)),
+                const SizedBox(height: 20),
+                
+                _buildFieldLabel('Doğum Tarihi'.tr(context)),
+                _buildDatePickerField(),
+                const SizedBox(height: 32),
+                
+                _buildFieldLabel('Dil Seçeneği'.tr(context)),
+                _buildLanguageSelector(appState),
+                
+                const SizedBox(height: 32),
+                _buildFieldLabel('Bildirimler'.tr(context)),
+                _buildNotificationToggle(appState),
+                
+                const SizedBox(height: 40),
+                
+                ElevatedButton(
+                  onPressed: () => _save(context),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF1A1A1A),
+                    foregroundColor: Colors.white,
+                    minimumSize: const Size(double.infinity, 60),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                   ),
+                  child: Text('Değişiklikleri Kaydet'.tr(context), style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                 ),
+                
                 const SizedBox(height: 16),
-                TextFormField(
-                  controller: _nameController,
-                  style: TextStyle(color: Theme.of(context).textTheme.bodyMedium?.color),
-                  decoration: InputDecoration(
-                    labelText: 'Adın'.tr(context),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.trim().isEmpty) {
-                      return 'Lütfen adını gir';
-                    }
-                    return null;
-                  },
+                
+                TextButton.icon(
+                  onPressed: appState.logout,
+                  style: TextButton.styleFrom(foregroundColor: Colors.red.shade700),
+                  icon: const Icon(Icons.logout_rounded, size: 20),
+                  label: Text('Çıkış Yap'.tr(context), style: const TextStyle(fontWeight: FontWeight.bold)),
                 ),
-                const SizedBox(height: 16),
-                GestureDetector(
-                  onTap: _pickDate,
-                  child: InputDecorator(
-                    decoration: InputDecoration(
-                      labelText: 'Doğum tarihin'.tr(context),
-                    ),
-                    child: Text(
-                      _birthDate == null
-                          ? 'Seç'
-                          : '${_birthDate!.day.toString().padLeft(2, '0')}.'
-                              '${_birthDate!.month.toString().padLeft(2, '0')}.'
-                              '${_birthDate!.year}',
-                      style: TextStyle(
-                        color: _birthDate == null 
-                          ? Theme.of(context).textTheme.bodyMedium?.color?.withValues(alpha: 0.5) 
-                          : Theme.of(context).textTheme.bodyMedium?.color,
-                      ),
-                    ),
-                  ),
-                ),
-              const SizedBox(height: 16),
-              TextFormField(
-                controller: _passwordController,
-                obscureText: true,
-                style: TextStyle(color: Theme.of(context).textTheme.bodyMedium?.color),
-                decoration: InputDecoration(
-                  labelText: 'Şifre'.tr(context),
-                ),
-              ),
-              const SizedBox(height: 24),
-              SwitchListTile(
-                title: Text('Karanlık mod'.tr(context)),
-                value: context.watch<AppState>().isDarkMode,
-                onChanged: (value) {
-                  context.read<AppState>().setDarkMode(value);
-                },
-              ),
-              const SizedBox(height: 8),
-              DropdownButtonFormField<String>(
-                initialValue: context.watch<AppState>().locale.languageCode,
-                style: TextStyle(color: Theme.of(context).textTheme.bodyMedium?.color),
-                decoration: InputDecoration(
-                  labelText: 'Dil'.tr(context),
-                ),
-                dropdownColor: Theme.of(context).canvasColor,
-                items: [
-                  DropdownMenuItem(value: 'tr', child: Text('Türkçe'.tr(context))),
-                  DropdownMenuItem(value: 'en', child: Text('English'.tr(context))),
-                ],
-                onChanged: (code) {
-                  if (code == null) return;
-                  context.read<AppState>().setLocale(Locale(code));
-                },
-              ),
-              const SizedBox(height: 24),
-              FilledButton(
-                onPressed: () => _save(context),
-                style: FilledButton.styleFrom(
-                  backgroundColor: const Color(0xFF4DB6AC),
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14),
-                  ),
-                ),
-                child: Text('Kaydet'.tr(context)),
-              ),
-              const SizedBox(height: 16),
-              OutlinedButton.icon(
-                onPressed: () => context.read<AppState>().logout(),
-                icon: const Icon(Icons.logout, size: 20),
-                label: Text('Çıkış yap'.tr(context)),
-                style: OutlinedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14),
-                  ),
-                  foregroundColor: Theme.of(context).colorScheme.error,
-                  side: BorderSide(color: Theme.of(context).colorScheme.error),
-                ),
-              ),
-            ],
+                const SizedBox(height: 40),
+              ],
+            ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildFieldLabel(String label) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 4, bottom: 8),
+      child: Text(label, style: TextStyle(color: Colors.grey.shade700, fontWeight: FontWeight.w700, fontSize: 13)),
+    );
+  }
+
+  Widget _buildReadOnlyField(String text) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+      decoration: BoxDecoration(
+        color: Colors.grey.shade100,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: Text(text, style: TextStyle(color: Colors.grey.shade500, fontWeight: FontWeight.w600)),
+    );
+  }
+
+  Widget _buildTextField(TextEditingController controller, String hint) {
+    return TextFormField(
+      controller: controller,
+      style: const TextStyle(color: Color(0xFF1A1A1A), fontWeight: FontWeight.w600),
+      decoration: InputDecoration(
+        hintText: hint,
+        filled: true,
+        fillColor: Colors.white,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: BorderSide(color: Colors.grey.shade200)),
+        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: BorderSide(color: Colors.grey.shade200)),
+        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: const BorderSide(color: Color(0xFF1A1A1A), width: 1.5)),
+      ),
+    );
+  }
+
+  Widget _buildDatePickerField() {
+    return GestureDetector(
+      onTap: _pickDate,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.grey.shade200),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              _birthDate == null ? 'Doğum tarihinizi seçin'.tr(context) : '${_birthDate!.day}.${_birthDate!.month}.${_birthDate!.year}',
+              style: TextStyle(
+                color: _birthDate == null ? Colors.grey.shade400 : const Color(0xFF1A1A1A),
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            Icon(Icons.calendar_month_rounded, color: Colors.grey.shade400, size: 20),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLanguageSelector(AppState appState) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          value: appState.locale.languageCode,
+          isExpanded: true,
+          icon: Icon(Icons.keyboard_arrow_down_rounded, color: Colors.grey.shade400),
+          items: [
+            DropdownMenuItem(value: 'tr', child: Text('Türkçe'.tr(context), style: const TextStyle(fontWeight: FontWeight.w600))),
+            DropdownMenuItem(value: 'en', child: Text('English'.tr(context), style: const TextStyle(fontWeight: FontWeight.w600))),
+          ],
+          onChanged: (v) {
+            if (v != null) appState.setLocale(Locale(v));
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNotificationToggle(AppState appState) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: SwitchListTile(
+        title: Text('Bildirimleri Etkinleştir'.tr(context), style: const TextStyle(color: Color(0xFF1A1A1A), fontWeight: FontWeight.w600, fontSize: 15)),
+        value: appState.notificationsEnabled,
+        activeColor: const Color(0xFF1A1A1A),
+        onChanged: (v) => appState.setNotificationsEnabled(v),
       ),
     );
   }
@@ -3956,7 +4535,7 @@ class _SimplePlaceholder extends StatelessWidget {
           const SizedBox(height: 8),
           Card(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(32),
             ),
             elevation: 0,
             color: Theme.of(context).colorScheme.surface,
@@ -4237,7 +4816,7 @@ class _AssistantTabState extends State<AssistantTab> {
           _messages.add(
             _ChatMessage(
               text:
-                  'Asistanı kullanmak için önce giriş yapmalısın. Profil sekmesinden giriş yapmayı dene.',
+                  'Asistanı kullanmak için önce giriş yapmalısın. Profil sekmesinden giriş yapmayı dene.'.tr(context),
               fromUser: false,
             ),
           );
@@ -4268,7 +4847,7 @@ class _AssistantTabState extends State<AssistantTab> {
         final data =
             jsonDecode(response.body) as Map<String, dynamic>;
         String reply = data['reply']?.toString() ??
-            'Asistan şu an beklenmedik bir cevap döndürdü.';
+            'Asistan şu an beklenmedik bir cevap döndürdü.'.tr(context);
         var action = data['action'];
 
         // Backend bazen doğrudan markdown json formatında yanıt verebiliyor, bunu temizleyip tekrar çözümleyelim
@@ -4309,8 +4888,8 @@ class _AssistantTabState extends State<AssistantTab> {
           _messages.add(
             _ChatMessage(
               text:
-                  'Asistan şu an yanıt veremiyor (hata kodu: ${response.statusCode}). '
-                  'Bir süre sonra tekrar dene.',
+                  'Asistan şu an yanıt veremiyor (hata kodu: '.tr(context) + '${response.statusCode}). ' +
+                  'Bir süre sonra tekrar dene.'.tr(context),
               fromUser: false,
             ),
           );
@@ -4323,7 +4902,7 @@ class _AssistantTabState extends State<AssistantTab> {
         _messages.add(
           _ChatMessage(
             text:
-                'Asistan ile bağlantı kurarken bir hata oluştu: $e',
+                'Asistan ile bağlantı kurarken bir hata oluştu: '.tr(context) + e.toString(),
             fromUser: false,
           ),
         );
@@ -4531,135 +5110,188 @@ class _AssistantTabState extends State<AssistantTab> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-          Expanded(
-            child: ListView.builder(
-              controller: _scrollController,
-              padding: const EdgeInsets.fromLTRB(16, 32, 16, 12),
-              itemCount: _messages.length + (_isSending ? 1 : 0),
-              itemBuilder: (context, index) {
-                if (index == _messages.length && _isSending) {
-                  return Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(vertical: 5),
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 12,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).cardTheme.color ?? Colors.white.withValues(alpha: 0.9),
-                        borderRadius: BorderRadius.circular(18),
-                      ),
-                      child: const SizedBox(
-                        width: 20, 
-                        height: 20, 
-                        child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF4DB6AC)),
-                      ),
-                    ),
-                  );
-                }
-
-                final msg = _messages[index];
-                final alignment =
-                    msg.fromUser ? Alignment.centerRight : Alignment.centerLeft;
-                final color = msg.fromUser
-                    ? const Color(0xFF4DB6AC)
-                    : Theme.of(context).cardTheme.color ?? Colors.white.withValues(alpha: 0.9);
-                final textColor = msg.fromUser
-                    ? Colors.white
-                    : Theme.of(context).textTheme.bodyMedium?.color ?? Colors.black87;
-
-                return Align(
-                  alignment: alignment,
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(vertical: 5),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 12,
-                    ),
-                    decoration: BoxDecoration(
-                      color: color,
-                      borderRadius: BorderRadius.circular(18),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.06),
-                          blurRadius: 8,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      msg.text,
-                      style: TextStyle(
-                        color: textColor,
-                        fontSize: 15,
-                        height: 1.4,
-                      ),
-                    ),
-                  ),
-                );
-              },
+    return Scaffold(
+      backgroundColor: const Color(0xFFF8F9FA),
+      body: Stack(
+        children: [
+          // Premium Background Watermark
+          Positioned(
+            top: 150,
+            left: 0,
+            right: 0,
+            child: Opacity(
+              opacity: 0.03,
+              child: const Icon(Icons.auto_awesome_rounded, size: 320, color: Color(0xFF1A1A1A)),
             ),
           ),
-          SafeArea(
-            top: false,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12)
-                  .copyWith(bottom: 8),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: TextButton.icon(
-                      onPressed:
-                          _messages.isEmpty ? null : () => _clearChat(),
-                      icon: Icon(Icons.chat_bubble_outline, color: Theme.of(context).iconTheme.color?.withValues(alpha: 0.7)),
-                      label: Text('Yeni sohbet'.tr(context), style: TextStyle(color: Theme.of(context).textTheme.bodyMedium?.color?.withValues(alpha: 0.7))),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          controller: _controller,
-                          minLines: 1,
-                          maxLines: 4,
-                          decoration: InputDecoration(
-                            hintText: 'Asistanına bir şey sor...'.tr(context),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(24),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(24),
-                              borderSide: BorderSide(
-                                color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.3),
-                              ),
-                            ),
-                            contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 18,
-                              vertical: 14,
-                            ),
-                          ),
-                          onSubmitted: (_) => _sendMessage(),
-                        ),
+          Column(
+            children: [
+              Expanded(
+                child: _messages.isEmpty
+                    ? _buildEmptyState()
+                    : ListView.builder(
+                        controller: _scrollController,
+                        padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
+                        itemCount: _messages.length + (_isSending ? 1 : 0),
+                        itemBuilder: (context, index) {
+                          if (index == _messages.length && _isSending) {
+                            return _buildTypingIndicator();
+                          }
+                          final msg = _messages[index];
+                          return _buildMessageBubble(msg);
+                        },
                       ),
-                      const SizedBox(width: 8),
-                      IconButton(
-                        onPressed: _sendMessage,
-                        icon: const Icon(Icons.send),
-                        color: const Color(0xFF4DB6AC),
-                      ),
-                    ],
-                  ),
-                ],
               ),
-            ),
+              _buildInputArea(),
+            ],
           ),
         ],
-      );
+      ),
+    );
+  }
+
+  Widget _buildEmptyState() {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(24),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,
+              boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 20)],
+            ),
+            child: const Icon(Icons.chat_bubble_outline_rounded, size: 40, color: Color(0xFF1A1A1A)),
+          ),
+          const SizedBox(height: 24),
+          const Text(
+            'Smart AI ile Konuş',
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: Color(0xFF1A1A1A), letterSpacing: -0.5),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Sana bugün nasıl yardımcı olabilirim?',
+            style: TextStyle(color: Colors.grey.shade600, fontWeight: FontWeight.w500),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTypingIndicator() {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10)],
+        ),
+        child: const SizedBox(
+          width: 18,
+          height: 18,
+          child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF1A1A1A)),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildMessageBubble(_ChatMessage msg) {
+    final isMe = msg.fromUser;
+    return Align(
+      alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+        constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.78),
+        decoration: BoxDecoration(
+          color: isMe ? const Color(0xFF1A1A1A) : Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: const Radius.circular(24),
+            topRight: const Radius.circular(24),
+            bottomLeft: Radius.circular(isMe ? 24 : 6),
+            bottomRight: Radius.circular(isMe ? 6 : 24),
+          ),
+          boxShadow: isMe ? [] : [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 12)],
+        ),
+        child: Text(
+          msg.text,
+          style: TextStyle(
+            color: isMe ? Colors.white : const Color(0xFF1A1A1A),
+            fontSize: 15,
+            fontWeight: FontWeight.w500,
+            height: 1.4,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildInputArea() {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(32)),
+        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 15, offset: const Offset(0, -5))],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (_messages.isNotEmpty)
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                onPressed: _clearChat,
+                icon: const Icon(Icons.refresh_rounded, size: 16, color: Colors.black38),
+                label: const Text('Yeni Sohbet', style: TextStyle(color: Colors.black38, fontSize: 12, fontWeight: FontWeight.w600)),
+              ),
+            ),
+          const SizedBox(height: 4),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF8F9FA),
+                    borderRadius: BorderRadius.circular(28),
+                  ),
+                  child: TextField(
+                    controller: _controller,
+                    minLines: 1,
+                    maxLines: 4,
+                    style: const TextStyle(fontWeight: FontWeight.w600, color: Color(0xFF1A1A1A), fontSize: 14),
+                    decoration: const InputDecoration(
+                      hintText: 'Asistanına bir şey sor...',
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: 13, fontWeight: FontWeight.w400),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    ),
+                    onSubmitted: (_) => _sendMessage(),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              GestureDetector(
+                onTap: _sendMessage,
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  padding: const EdgeInsets.all(12),
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF1A1A1A),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(Icons.send_rounded, color: Colors.white, size: 20),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -4671,4 +5303,89 @@ class _ChatMessage {
 
   final String text;
   final bool fromUser;
+}
+
+class NotificationsScreen extends StatelessWidget {
+  const NotificationsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFF8F9FA),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20, color: Color(0xFF1A1A1A)),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text('Bildirim Merkezi', style: TextStyle(color: Color(0xFF1A1A1A), fontWeight: FontWeight.w900)),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(24),
+        children: [
+          _buildNotificationItem(
+            'Hoş Geldin!',
+            'Smart Assistant Premium dünyasına hoş geldin. Tüm özellikler emrine amade.',
+            'Az Önce',
+            Icons.auto_awesome_rounded,
+          ),
+          _buildNotificationItem(
+            'Günlük Hedef Yakın',
+            'Bugünkü hedeflerinin %80\'ini tamamladın. Harika gidiyorsun!',
+            '2 Saat Önce',
+            Icons.auto_graph_rounded,
+          ),
+          _buildNotificationItem(
+            'Yeni Özellik: Asistan',
+            'Artık asistanınla sesli veya yazılı konuşarak rutin ekleyebilirsin.',
+            'Dün',
+            Icons.assistant_rounded,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildNotificationItem(String title, String body, String time, IconData icon) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10)],
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1A1A1A).withOpacity(0.05),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(icon, color: const Color(0xFF1A1A1A), size: 22),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(title, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16, color: Color(0xFF1A1A1A))),
+                    Text(time, style: TextStyle(color: Colors.grey.shade400, fontSize: 11, fontWeight: FontWeight.w600)),
+                  ],
+                ),
+                const SizedBox(height: 6),
+                Text(body, style: TextStyle(color: Colors.grey.shade600, fontSize: 13, height: 1.4)),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

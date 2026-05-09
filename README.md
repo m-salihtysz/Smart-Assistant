@@ -4,11 +4,11 @@ Akıllı ve kişiselleştirilmiş bir asistan deneyimi sunan, modern teknolojile
 
 ---
 
-![Smart Assistant Showcase](./showcase.png)
+![Smart Assistant Showcase](./Uygulama.png)
 
 ---
 
-### 📥 [**Uygulama Tanıtımını ve Ekran Görüntülerini Görüntüle (PDF)**](./app.pdf)
+### 📥 [**Tüm Ekran Görüntüleri ve Detaylı Sunum (PDF)**](./Uygulama.pdf)
 
 ---
 

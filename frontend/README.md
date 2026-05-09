@@ -57,6 +57,6 @@ Uygulamanın backend ile iletişim kurabilmesi için `lib/main.dart` içerisinde
 
 Uygulamanın arayüz tasarımı ve detaylı kullanımı hakkında görsel bilgi edinmek için ana dizindeki tanıtım dosyasını inceleyebilirsiniz:
 
-👉 **[Uygulama Tanıtımı (PDF)](../app.pdf)**
+👉 **[Uygulama Tanıtımı (PDF)](../Uygulama.pdf)**
 
 ---
