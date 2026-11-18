@@ -6,7 +6,7 @@ Akıllı ve kişiselleştirilmiş bir asistan deneyimi sunan, modern teknolojile
 
 ![Smart Assistant](./docs/showcase.png)
 
-### 📥 [**Sunum (PDF)**](./docs/sunum/SUNUM.pdf) · Tekil ekran görüntüleri: [docs/screenshots](./docs/screenshots)
+### 📥 [**Tüm Ekran Görüntüleri ve Detaylı Sunum (PDF)**](./docs/sunum/SUNUM.pdf)
 
 ---
 
