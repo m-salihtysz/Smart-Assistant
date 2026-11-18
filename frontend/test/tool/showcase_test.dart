@@ -4,7 +4,7 @@
 //     --dart-define=SHOWCASE_DIR=../docs/screenshots \
 //     --dart-define=FONT_DIR=<flutter-sdk>/bin/cache/artifacts/material_fonts
 //
-// Gerçek ekranları demo verisiyle çizer, tek tek ve ışık/koyu tema kolajı olarak PNG yazar.
+// Gerçek ekranları demo verisiyle çizer, her ekranı açık ve koyu temada PNG olarak yazar.
 import 'dart:convert';
 import 'dart:io';
 import 'dart:ui' as ui;
@@ -228,100 +228,5 @@ void main() {
         images.putIfAbsent(shot.name, () => {})[brightness] = image!;
       }
     }
-
-    Future<void> collage(String file, List<_Shot> items, Brightness b, String title, String subtitle) async {
-      const phoneW = 300.0;
-      const phoneH = phoneW * 844 / 390;
-      const gap = 36.0;
-      const pad = 72.0;
-      final width = pad * 2 + items.length * phoneW + (items.length - 1) * gap;
-      const header = 190.0;
-      const captionH = 70.0;
-      final height = header + phoneH + captionH + pad;
-      final dark = b == Brightness.dark;
-      final bg = dark ? const [Color(0xFF0B0F1A), Color(0xFF1B2440)] : const [Color(0xFFF4F6FB), Color(0xFFDDE5F7)];
-      final fg = dark ? Colors.white : const Color(0xFF111827);
-      final sub = dark ? const Color(0xFF9CA3AF) : const Color(0xFF4B5563);
-      tester.view.physicalSize = Size(width * 2, height * 2);
-      tester.view.devicePixelRatio = 2;
-      final key = GlobalKey();
-      await tester.pumpWidget(
-        Directionality(
-          textDirection: TextDirection.ltr,
-          child: RepaintBoundary(
-            key: key,
-            child: Container(
-              width: width,
-              height: height,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: bg,
-                ),
-              ),
-              padding: const EdgeInsets.fromLTRB(pad, 56, pad, 0),
-              child: DefaultTextStyle(
-                style: TextStyle(fontFamily: 'Roboto', color: fg),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(title, style: const TextStyle(fontSize: 56, fontWeight: FontWeight.w900, letterSpacing: -1.5)),
-                    const SizedBox(height: 10),
-                    Text(subtitle, style: TextStyle(fontSize: 24, color: sub)),
-                    const SizedBox(height: 40),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        for (var i = 0; i < items.length; i++) ...[
-                          if (i > 0) const SizedBox(width: gap),
-                          SizedBox(
-                            width: phoneW,
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: phoneH,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(38),
-                                    border: Border.all(color: dark ? const Color(0xFF2B3550) : const Color(0xFF111827), width: 6),
-                                    boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: dark ? 0.5 : 0.18), blurRadius: 32, offset: const Offset(0, 14))],
-                                  ),
-                                  clipBehavior: Clip.antiAlias,
-                                  child: RawImage(
-                                    image: images[items[i].name]![b],
-                                    fit: BoxFit.cover,
-                                    filterQuality: FilterQuality.high,
-                                  ),
-                                ),
-                                const SizedBox(height: 22),
-                                Text(items[i].caption, textAlign: TextAlign.center, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w700)),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ),
-      );
-      await tester.pump();
-      final out = await tester.runAsync(() async {
-        final ro = key.currentContext!.findRenderObject()! as RenderRepaintBoundary;
-        final img = await ro.toImage(pixelRatio: 1);
-        return img.toByteData(format: ui.ImageByteFormat.png);
-      });
-      File('$_outDir/$file').writeAsBytesSync(out!.buffer.asUint8List());
-    }
-
-    final byName = {for (final s in shots) s.name: s};
-    List<_Shot> pick(List<String> n) => [for (final x in n) byName[x]!];
-    const sub = 'Spor, finans, rutinler, aktiviteler ve notların tek uygulamada. Yapay zeka asistanı hepsini bilir.';
-    await collage('showcase_light.png', pick(['home', 'sport', 'finance', 'routines', 'assistant']), Brightness.light, 'Smart Assistant', sub);
-    await collage('showcase_dark.png', pick(['home', 'sport', 'finance', 'routines', 'assistant']), Brightness.dark, 'Smart Assistant · Koyu tema', sub);
-    await collage('showcase_more.png', pick(['activities', 'notes', 'settings', 'assistant']), Brightness.light, 'Daha fazlası', 'Hatırlatıcılar, notlar, bulut yedekleme, açık/koyu tema ve Türkçe/İngilizce dil desteği.');
   });
 }

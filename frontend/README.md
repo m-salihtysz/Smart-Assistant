@@ -98,7 +98,7 @@ flutter test test/live_backend_e2e_test.dart --dart-define=E2E=true --dart-defin
 
 ## 🎨 Uygulama Görselleri
 
-![Açık tema](../docs/screenshots/showcase_light.png)
+![Smart Assistant](../docs/sunum/slides/01.jpg)
 
 Ekran görüntüleri (açık/koyu tema, tekil ekranlar): **[docs/screenshots](../docs/screenshots)**. Yeniden üretmek için:
 
