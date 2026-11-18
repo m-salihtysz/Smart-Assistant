@@ -100,14 +100,12 @@ flutter test test/live_backend_e2e_test.dart --dart-define=E2E=true --dart-defin
 
 ![Açık tema](../docs/screenshots/showcase_light.png)
 
-Güncel ekran görüntüleri (açık/koyu tema, tekil ekranlar): **[docs/screenshots](../docs/screenshots)**. Yeniden üretmek için:
+Ekran görüntüleri (açık/koyu tema, tekil ekranlar): **[docs/screenshots](../docs/screenshots)**. Yeniden üretmek için:
 
 ```bash
 flutter test test/tool/showcase_test.dart \
   --dart-define=SHOWCASE_DIR=$PWD/../docs/screenshots \
   --dart-define=FONT_DIR=<flutter-sdk>/bin/cache/artifacts/material_fonts
 ```
-
-Eski arayüzün sunumu: [Uygulama.pdf](../Uygulama.pdf)
 
 ---

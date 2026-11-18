@@ -12,10 +12,6 @@ Akıllı ve kişiselleştirilmiş bir asistan deneyimi sunan, modern teknolojile
 
 ---
 
-### 📥 [**Eski arayüzün sunumu (PDF)**](./Uygulama.pdf) · Tekil ekran görüntüleri: [docs/screenshots](./docs/screenshots)
-
----
-
 ## 📌 Proje Hakkında
 
 Smart Assistant, kullanıcıların günlük görevlerini yönetmelerine, not almalarına ve en önemlisi gelişmiş Yapay Zeka (AI) modelleri ile (Gemini veya OpenAI) sohbet ederek yardım almasına olanak tanıyan bir asistan ekosistemidir.
@@ -42,7 +38,7 @@ smart_assistant/
 │   ├── alembic/       # veritabanı göçleri
 │   ├── tests/         # pytest testleri
 │   └── .env           # Yapılandırma dosyası (.env.example'dan)
-├── docs/              # Yayın kontrol listesi, dağıtım rehberi, gizlilik politikası
+├── docs/              # Dokümanlar ve ekran görüntüleri
 ├── .github/workflows/ # CI (ruff, pytest SQLite+PostgreSQL, flutter analyze/test)
 └── README.md          # Ana dokümantasyon
 ```
@@ -71,14 +67,6 @@ Frontend dizinine gidin ve Flutter uygulamasını başlatın (MacOS/Xcode gerekl
 - 🔔 **Hatırlatıcılar:** Yerel bildirimlerle aktivite ve her hafta tekrarlayan rutinler.
 - 💼 **Modüller:** Spor planı, finans (gelir-gider), rutinler, aktiviteler, notlar.
 - 🎨 **Tema ve dil:** Açık/koyu/sistem teması; Türkçe ve İngilizce.
-
----
-
-## 📦 Yayın
-
-App Store'a çıkış adımları ve hazırlık durumu için: **[docs/APP_STORE_CHECKLIST.md](./docs/APP_STORE_CHECKLIST.md)**.
-Sunucuya kurulum (PostgreSQL, HTTPS, systemd): **[docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md)**.
-Gizlilik politikası taslağı: **[docs/PRIVACY_POLICY.md](./docs/PRIVACY_POLICY.md)**.
 
 ---
 
