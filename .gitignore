@@ -30,3 +30,7 @@ backend/app.db
 
 # Logs
 *.log
+
+# Yalnızca iOS hedefleniyor
+frontend/macos/
+frontend/web/

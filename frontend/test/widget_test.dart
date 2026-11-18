@@ -1,30 +1,36 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show CircularProgressIndicator;
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart' as http;
+import 'package:http/testing.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smart_assistant/main.dart';
+import 'support/fakes.dart';
 
-import 'package:personal_assistant/main.dart';
+AppState _state() => AppState(
+  client: MockClient((_) async => http.Response('{}', 401)),
+  sessionStorage: MemorySessionStorage(),
+);
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  setUp(() => SharedPreferences.setMockInitialValues({}));
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+  testWidgets('Giriş yapılmamışken karşılama ekranı gösterilir', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(MyApp(appState: _state()));
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.byType(WelcomeScreen), findsOneWidget);
+    expect(find.byType(HomeScreen), findsNothing);
+  });
+
+  testWidgets('Oturum geri yüklenirken yükleme göstergesi çıkar', (
+    WidgetTester tester,
+  ) async {
+    final state = _state()..isRestoring = true;
+    await tester.pumpWidget(MyApp(appState: state));
+
+    expect(find.byType(WelcomeScreen), findsNothing);
+    expect(find.byType(CircularProgressIndicator), findsOneWidget);
   });
 }

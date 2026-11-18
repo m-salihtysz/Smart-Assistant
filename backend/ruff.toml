@@ -1,0 +1,10 @@
+# Statik analiz: hatalar (F), olası hatalar (B), sadeleştirme (SIM), gereksiz kod (RET, PIE)
+target-version = "py310"
+
+[lint]
+select = ["F", "E9", "B", "SIM", "RET", "PIE"]
+ignore = [
+  "SIM108",  # üçlü ifade zorlaması
+  "RET505",  # return sonrası else
+  "B008",    # FastAPI Depends() varsayılan argümanı
+]

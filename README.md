@@ -4,11 +4,15 @@ Akıllı ve kişiselleştirilmiş bir asistan deneyimi sunan, modern teknolojile
 
 ---
 
-![Smart Assistant Showcase](./Uygulama.png)
+![Smart Assistant - açık tema](./docs/screenshots/showcase_light.png)
+
+![Smart Assistant - koyu tema](./docs/screenshots/showcase_dark.png)
+
+![Smart Assistant - daha fazlası](./docs/screenshots/showcase_more.png)
 
 ---
 
-### 📥 [**Tüm Ekran Görüntüleri ve Detaylı Sunum (PDF)**](./Uygulama.pdf)
+### 📥 [**Eski arayüzün sunumu (PDF)**](./Uygulama.pdf) · Tekil ekran görüntüleri: [docs/screenshots](./docs/screenshots)
 
 ---
 
@@ -21,7 +25,7 @@ Smart Assistant, kullanıcıların günlük görevlerini yönetmelerine, not alm
 Bu proje iki ana bölümden oluşmaktadır:
 
 1.  **[Frontend (Flutter)](./frontend):** iOS platformu için optimize edilmiş kullanıcı dostu arayüz, yerel bildirimler, çoklu dil desteği (TR/EN) ve dinamik kullanıcı deneyimi sağlar.
-2.  **[Backend (FastAPI)](./backend):** Kullanıcı kimlik doğrulama (JWT), veri kalıcılığı (SQLite + SQLAlchemy) ve AI entegrasyonu (Gemini/OpenAI) sağlar.
+2.  **[Backend (FastAPI)](./backend):** Kimlik doğrulama (JWT + yenileme token'ı), şifre sıfırlama, bulut yedekleme/senkron, veri kalıcılığı (SQLAlchemy; geliştirmede SQLite, üretimde PostgreSQL; Alembic göçleri) ve AI entegrasyonu (Gemini/OpenAI) sağlar.
 
 ---
 
@@ -30,11 +34,16 @@ Bu proje iki ana bölümden oluşmaktadır:
 ```text
 smart_assistant/
 ├── frontend/          # Flutter Mobil Uygulaması (iOS Odaklı)
-│   ├── lib/           # Uygulama kaynak kodları (Single-file main.dart)
+│   ├── lib/           # main.dart + screens/ + services/ + theme/ + widgets/ + l10n/
+│   ├── test/          # birim, widget ve (isteğe bağlı) uçtan uca testler
 │   └── ios/           # iOS projesi yapılandırması
 ├── backend/           # FastAPI Sunucusu
 │   ├── app/           # API mantığı, modeller ve yönlendiriciler
-│   └── .env           # Yapılandırma dosyası
+│   ├── alembic/       # veritabanı göçleri
+│   ├── tests/         # pytest testleri
+│   └── .env           # Yapılandırma dosyası (.env.example'dan)
+├── docs/              # Yayın kontrol listesi, dağıtım rehberi, gizlilik politikası
+├── .github/workflows/ # CI (ruff, pytest SQLite+PostgreSQL, flutter analyze/test)
 └── README.md          # Ana dokümantasyon
 ```
 
@@ -56,16 +65,25 @@ Frontend dizinine gidin ve Flutter uygulamasını başlatın (MacOS/Xcode gerekl
 
 ## ✨ Temel Özellikler
 
-- 🤖 **AI Sohbet:** Gemini veya OpenAI modelleriyle doğrudan etkileşim.
-- 🔐 **Kimlik Doğrulama:** JWT tabanlı güvenli kayıt ve giriş sistemi.
-- 🔔 **Hatırlatıcılar:** Yerel bildirimlerle aktivite ve rutin takibi.
-- 💼 **Modüller:** Spor planı, borsa takibi, finans yönetimi ve notlar.
-- 🌐 **Dil Desteği:** Tamamen Türkçe ve İngilizce desteği.
+- 🤖 **AI Sohbet:** Gemini veya OpenAI modelleriyle; planların, rutinlerin ve harcamaların hakkında soru sor, kayıt ekletebil. Veri paylaşımı için açık izin istenir.
+- 🔐 **Hesap:** E-posta ve parola ile kayıt/giriş (Google/Apple girişi yok; ileride Sign in with Apple eklenebilir), oturumun sessizce yenilenmesi, şifre sıfırlama (e-posta kodu), isteğe bağlı e-posta doğrulama, şifre değiştirme ve hesap silme.
+- ☁️ **Bulut yedekleme:** Verilerin cihaz kaybında geri yüklenir ve cihazlar arasında eşitlenir (kapatılabilir).
+- 🔔 **Hatırlatıcılar:** Yerel bildirimlerle aktivite ve her hafta tekrarlayan rutinler.
+- 💼 **Modüller:** Spor planı, finans (gelir-gider), rutinler, aktiviteler, notlar.
+- 🎨 **Tema ve dil:** Açık/koyu/sistem teması; Türkçe ve İngilizce.
+
+---
+
+## 📦 Yayın
+
+App Store'a çıkış adımları ve hazırlık durumu için: **[docs/APP_STORE_CHECKLIST.md](./docs/APP_STORE_CHECKLIST.md)**.
+Sunucuya kurulum (PostgreSQL, HTTPS, systemd): **[docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md)**.
+Gizlilik politikası taslağı: **[docs/PRIVACY_POLICY.md](./docs/PRIVACY_POLICY.md)**.
 
 ---
 
 ## 📄 Lisans
 
-Bu proje eğitim ve kişisel gelişim amaçlı geliştirilmiştir.
+Bu proje [MIT Lisansı](./LICENSE) ile lisanslanmıştır.
 
 ---
