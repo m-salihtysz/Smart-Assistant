@@ -10,6 +10,8 @@ Akıllı ve kişiselleştirilmiş bir asistan deneyimi sunan, modern teknolojile
 
 ![Smart Assistant - daha fazlası](./docs/screenshots/showcase_more.png)
 
+### 📥 [**Sunum (PDF)**](./docs/sunum/SUNUM.pdf)
+
 ---
 
 ## 📌 Proje Hakkında

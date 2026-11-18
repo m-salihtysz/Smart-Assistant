@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Smart Assistant - Sunum</title>
+<style>
+  @page { size: 1200px 675px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #16181d; --muted: #5b6270; --bg1: #f6f7fb; --bg2: #e4e9f5;
+    --accent: #16181d; --card: #ffffff; --soft: #eceff7;
+  }
+  body { font-family: -apple-system, "SF Pro Display", "Helvetica Neue", Arial, sans-serif; color: var(--ink); }
+  .slide {
+    width: 1200px; height: 675px; position: relative; overflow: hidden; page-break-after: always;
+    background: radial-gradient(900px 500px at 0% 100%, #dfe6f6 0%, transparent 70%), linear-gradient(135deg, var(--bg1), var(--bg2));
+    display: flex; align-items: center; padding: 0 70px;
+  }
+  .slide.flip { flex-direction: row-reverse; }
+  .text { flex: 1; padding: 0 30px; }
+  .visual { width: 470px; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 22px; }
+  .eyebrow i { width: 26px; height: 26px; border-radius: 8px; background: var(--accent); display: inline-block; }
+  h1 { font-size: 72px; line-height: 1.02; letter-spacing: -2.5px; font-weight: 900; margin-bottom: 22px; }
+  h2 { font-size: 44px; line-height: 1.08; letter-spacing: -1.4px; font-weight: 900; margin-bottom: 26px; }
+  .lead { font-size: 19px; line-height: 1.5; color: var(--muted); max-width: 430px; margin-bottom: 26px; }
+  .chips { display: flex; gap: 10px; flex-wrap: wrap; }
+  .chip { padding: 9px 16px; border-radius: 999px; background: var(--card); font-size: 14px; font-weight: 700; box-shadow: 0 2px 8px rgba(20,30,60,.07); }
+  .chip.on { background: var(--accent); color: #fff; }
+  ol { list-style: none; counter-reset: n; max-width: 470px; }
+  ol li { counter-increment: n; display: flex; gap: 14px; font-size: 18px; line-height: 1.45; color: var(--muted); margin-bottom: 16px; }
+  ol li::before { content: counter(n); flex: none; width: 24px; height: 24px; margin-top: 2px; border-radius: 8px; background: var(--soft); color: var(--ink); font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  ol b { color: var(--ink); }
+  .phone {
+    width: 252px; height: 545px; border-radius: 40px; border: 7px solid var(--ink); background: #fff; overflow: hidden;
+    box-shadow: 0 30px 60px rgba(20,30,60,.22); position: relative;
+  }
+  .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .phone.dark { border-color: #2b3550; }
+  .float { position: absolute; background: var(--card); border-radius: 18px; padding: 14px 20px; box-shadow: 0 14px 34px rgba(20,30,60,.16); }
+  .float b { display: block; font-size: 24px; font-weight: 900; letter-spacing: -.6px; }
+  .float span { font-size: 12px; color: var(--muted); }
+  .foot { position: absolute; left: 70px; bottom: 28px; font-size: 12px; color: #8a91a0; }
+  .cards { display: flex; gap: 18px; margin: 4px 0 28px; }
+  .card { flex: 1; background: var(--card); border-radius: 22px; padding: 24px; box-shadow: 0 6px 20px rgba(20,30,60,.07); }
+  .card .ic { width: 38px; height: 38px; border-radius: 12px; background: var(--accent); margin-bottom: 16px; }
+  .card h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; letter-spacing: -.3px; }
+  .card p { font-size: 14px; line-height: 1.5; color: var(--muted); }
+  .wide { display: flex; flex-direction: column; justify-content: center; align-items: stretch; padding: 0 70px; }
+  .wide .text { padding: 0; flex: none; }
+</style>
+</head>
+<body><!-- 1 -->
+<section class="slide">
+  <div class="text">
+    <div class="eyebrow"><i></i>Kişisel yapay zeka asistanı</div>
+    <h1>Smart<br>Assistant</h1>
+    <p class="lead">Spor, finans, rutinler, aktiviteler ve notların tek uygulamada. Yapay zeka hepsini bilir, sorduğunu cevaplar, istediğini ekler.</p>
+    <div class="chips"><span class="chip on">5 modül</span><span class="chip">Yapay zeka sohbeti</span><span class="chip">Açık ve koyu tema</span></div>
+  </div>
+  <div class="visual">
+    <div class="phone"><img src="../screenshots/home_light.png"></div>
+    <div class="float" style="right:-62px; top:90px;"><b>TR · EN</b><span>iki dil desteği</span></div>
+    <div class="float" style="left:-78px; bottom:80px;"><b>Bulut yedek</b><span>cihazlar arası eşitleme</span></div>
+  </div>
+  <div class="foot">Smart Assistant · 01</div>
+</section>
+
+
+<section class="slide flip">
+  <div class="text">
+    <div class="eyebrow"><i></i>Asistan</div>
+    <h2>Sor, o cevaplasın.<br>İste, o eklesin.</h2>
+    <ol><li><span><b>"Bu hafta ne kadar harcadım?"</b> gibi soruları kendi verilerine bakarak yanıtlar.</span></li><li><span>"Yarın 11:00 için hatırlatıcı ekle" demen yeterli; <b>kayıt kendiliğinden oluşur</b>.</span></li><li><span>Veri paylaşımı için <b>açık izin</b> istenir, istediğin an geri alırsın.</span></li></ol>
+  </div>
+  <div class="visual">
+    <div class="phone " style=""><img src="../screenshots/assistant_light.png"></div>
+    <div class="float" style="left:-82px; top:110px;"><b>Gemini / OpenAI</b><span>seçilebilir yapay zeka</span></div>
+  </div>
+  <div class="foot">Smart Assistant · 02</div>
+</section>
+
+<section class="slide">
+  <div class="text">
+    <div class="eyebrow"><i></i>Rutinler</div>
+    <h2>Alışkanlıklarını<br>her gün işaretle</h2>
+    <ol><li><span>Her gün için <b>rutinler</b> ekle; tamamladıkça işaretle.</span></li><li><span>İlerleme <b>ana sayfada yüzdeyle</b> görünür.</span></li><li><span>İstediğin rutine <b>her hafta tekrarlayan hatırlatıcı</b> kur.</span></li></ol>
+  </div>
+  <div class="visual">
+    <div class="phone " style=""><img src="../screenshots/routines_light.png"></div>
+    <div class="float" style="right:-70px; bottom:90px;"><b>%50</b><span>günlük hedef tamamlandı</span></div>
+  </div>
+  <div class="foot">Smart Assistant · 03</div>
+</section>
+
+<section class="slide flip">
+  <div class="text">
+    <div class="eyebrow"><i></i>Spor</div>
+    <h2>Haftalık antrenman<br>planını kur</h2>
+    <ol><li><span>Her gün için <b>çalışılacak bölgeyi</b> seç.</span></li><li><span><b>Hareket, set ve tekrar</b> bilgisini kaydet.</span></li><li><span>Planını istediğin an düzenle, hareketleri sil.</span></li></ol>
+  </div>
+  <div class="visual">
+    <div class="phone " style=""><img src="../screenshots/sport_light.png"></div>
+    <div class="float" style="left:-80px; bottom:100px;"><b>Set × Tekrar</b><span>hareket bazlı takip</span></div>
+  </div>
+  <div class="foot">Smart Assistant · 04</div>
+</section>
+
+<section class="slide">
+  <div class="text">
+    <div class="eyebrow"><i></i>Finans</div>
+    <h2>Paranın nereye<br>gittiğini gör</h2>
+    <ol><li><span><b>Gelir ve gider</b> ekle, kategoriye göre ayır.</span></li><li><span>Bakiye, günlük ve aylık gideri <b>tek bakışta</b> izle.</span></li><li><span>Takip listesiyle <b>ilgilendiğin varlıkları</b> yanında tut.</span></li></ol>
+  </div>
+  <div class="visual">
+    <div class="phone " style=""><img src="../screenshots/finance_light.png"></div>
+    <div class="float" style="right:-70px; bottom:100px;"><b>Anlık özet</b><span>bakiye · gelir · gider</span></div>
+  </div>
+  <div class="foot">Smart Assistant · 05</div>
+</section>
+
+<section class="slide flip">
+  <div class="text">
+    <div class="eyebrow"><i></i>Aktiviteler</div>
+    <h2>Planlarını takvimde<br>topla</h2>
+    <ol><li><span>Takvim şeridinden <b>güne göre</b> aktivite ekle.</span></li><li><span>İstediğine <b>hatırlatıcı bağla</b>, bildirimle haberin olsun.</span></li><li><span>Bugünkü aktiviteler <b>ana sayfada</b> özetlenir.</span></li></ol>
+  </div>
+  <div class="visual">
+    <div class="phone " style=""><img src="../screenshots/activities_light.png"></div>
+    <div class="float" style="left:-80px; top:100px;"><b>Hatırlatıcı</b><span>yerel bildirim</span></div>
+  </div>
+  <div class="foot">Smart Assistant · 06</div>
+</section>
+
+<section class="slide">
+  <div class="text">
+    <div class="eyebrow"><i></i>Notlar</div>
+    <h2>Fikirlerini hemen<br>not al</h2>
+    <ol><li><span><b>Başlık ve metinle</b> hızlıca not oluştur.</span></li><li><span>Dokunarak <b>düzenle ya da sil</b>.</span></li><li><span>Notların cihazlar arasında <b>bulutla eşitlenir</b>.</span></li></ol>
+  </div>
+  <div class="visual">
+    <div class="phone " style=""><img src="../screenshots/notes_light.png"></div>
+    <div class="float" style="right:-60px; top:110px;"><b>Hızlı kayıt</b><span>tek dokunuşla</span></div>
+  </div>
+  <div class="foot">Smart Assistant · 07</div>
+</section>
+
+<section class="slide flip">
+  <div class="text">
+    <div class="eyebrow"><i></i>Hesap ve ayarlar</div>
+    <h2>Verin sende,<br>kontrol de sende</h2>
+    <ol><li><span>Ad, doğum tarihi ve <b>dil seçimi</b> (Türkçe / İngilizce).</span></li><li><span><b>Bildirimleri</b> ve <b>bulut yedeklemeyi</b> tek anahtarla aç ya da kapat.</span></li><li><span><b>Şifre değiştirme, şifre sıfırlama</b> ve uygulamadan <b>hesap silme</b>.</span></li></ol>
+  </div>
+  <div class="visual">
+    <div class="phone " style=""><img src="../screenshots/settings_light.png"></div>
+    <div class="float" style="left:-80px; bottom:90px;"><b>Hesabını sil</b><span>yedekle birlikte</span></div>
+  </div>
+  <div class="foot">Smart Assistant · 08</div>
+</section>
+
+<section class="slide">
+  <div class="text">
+    <div class="eyebrow"><i></i>Tema</div>
+    <h2>Gece de gündüz de<br>gözünü yormaz</h2>
+    <ol><li><span><b>Açık, koyu veya sistem teması</b>; Ayarlar'dan değişir.</span></li><li><span>Her ekran iki temada da tasarlandı.</span></li><li><span>Seçimin <b>uygulama kapansa da</b> hatırlanır.</span></li></ol>
+  </div>
+  <div class="visual" style="width:560px;">
+    <div class="phone " style="margin-right:18px;"><img src="../screenshots/home_light.png"></div><div class="phone dark" style="margin-top:60px;"><img src="../screenshots/home_dark.png"></div>
+    <div class="float" style="right:-60px; top:40px;"><b>Koyu tema</b><span>her ekranda</span></div>
+  </div>
+  <div class="foot">Smart Assistant · 09</div>
+</section>
+<!-- 6 -->
+<section class="slide wide">
+  <div class="text">
+    <div class="eyebrow"><i></i>Altyapı</div>
+    <h2>Güvenli, yedekli ve<br>yapay zeka destekli</h2>
+    <div class="cards">
+      <div class="card"><div class="ic"></div><h3>Yapay zeka</h3><p>Gemini veya OpenAI ile sohbet. Veri, yalnızca açık izinle gönderilir. Günlük kota maliyeti sınırlar.</p></div>
+      <div class="card"><div class="ic"></div><h3>Güvenlik</h3><p>JWT ve yenilenen oturum anahtarı, hız sınırı, e-postayla şifre sıfırlama ve uygulamadan hesap silme.</p></div>
+      <div class="card"><div class="ic"></div><h3>Bulut yedek</h3><p>Veriler cihazlar arasında eşitlenir. İstersen kapatır, sunucudaki kopyayı silersin.</p></div>
+    </div>
+    <div class="chips"><span class="chip on">Flutter</span><span class="chip">FastAPI</span><span class="chip">PostgreSQL</span><span class="chip">SQLAlchemy</span><span class="chip">Alembic</span><span class="chip">Gemini</span><span class="chip">OpenAI</span></div>
+  </div>
+  <div class="foot">Smart Assistant · 10 · github.com/m-salihtysz/Smart-Assistant</div>
+</section>
+
+
+</body>
+</html>
