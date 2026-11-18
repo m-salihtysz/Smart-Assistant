@@ -4,25 +4,7 @@ Akıllı ve kişiselleştirilmiş bir asistan deneyimi sunan, modern teknolojile
 
 ---
 
-![Smart Assistant](./docs/sunum/slides/01.jpg)
-
-![Asistan](./docs/sunum/slides/02.jpg)
-
-![Rutinler](./docs/sunum/slides/03.jpg)
-
-![Spor](./docs/sunum/slides/04.jpg)
-
-![Finans](./docs/sunum/slides/05.jpg)
-
-![Aktiviteler](./docs/sunum/slides/06.jpg)
-
-![Notlar](./docs/sunum/slides/07.jpg)
-
-![Hesap ve ayarlar](./docs/sunum/slides/08.jpg)
-
-![Tema](./docs/sunum/slides/09.jpg)
-
-![Altyapı](./docs/sunum/slides/10.jpg)
+![Smart Assistant](./docs/showcase.png)
 
 ### 📥 [**Sunum (PDF)**](./docs/sunum/SUNUM.pdf) · Tekil ekran görüntüleri: [docs/screenshots](./docs/screenshots)
 
